@@ -1,0 +1,13 @@
+{ "name" : "multipart"
+, "version" : "0.0.0"
+, "description" : "A JavaScript library for parsing and writing multipart messages"
+, "contributors" :
+  [ "Isaac Z. Schlueter <i@izs.me>"
+  , "John Wright <mrjjwright@gmail.com>"
+  ]
+, "repository" :
+  { "type" : "git"
+  , "url" : "http://github.com/isaacs/multipart-js.git"
+  }
+, "main" : "lib/multipart"
+}

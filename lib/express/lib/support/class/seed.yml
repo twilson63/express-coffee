@@ -1,0 +1,5 @@
+---
+  name: Class
+  description: High performance class implementation (tiny)
+  tag: oo class performance
+  version: 0.3.0
