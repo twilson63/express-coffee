@@ -5,7 +5,7 @@
 If you like coffeescript and nodejs, I would recommend you take a look
 at meryl-coffee
 
-[meryl-coffee](http://github.com/twilson63/meryl-coffee.git)
+[meryl-coffee](http://github.com/twilson63/meryl-coffee)
 
 ----
 
