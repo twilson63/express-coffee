@@ -1,12 +1,20 @@
 # Express Coffee
 
+# [DEPRECATED] No longer works
+
+If you like coffeescript and nodejs, I would recommend you take a look
+at meryl-coffee
+
+[meryl-coffee](http://github.com/twilson63/meryl-coffee.git)
+
+----
+
 This is a template that can be used to create nodejs applications using 
 
 * Express
 * CoffeeScript!
 * Haml
 * Sass
-* MongoDb
 
 ## Requirements
 

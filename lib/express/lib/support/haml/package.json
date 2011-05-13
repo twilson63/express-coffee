@@ -1,7 +1,0 @@
-{
-  "name": "haml",
-  "description": "Faster, harder, better HAML template engine",
-  "keywords": ["haml", "template", "engine", "view", "nodejs"],
-  "author": "TJ Holowaychuk",
-  "version": "0.4.5"
-}
