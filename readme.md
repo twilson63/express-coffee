@@ -1,25 +1,48 @@
 # Express Coffee
 
-# [DEPRECATED] No longer works
+This is a template nodejs web app
 
-If you like coffeescript and nodejs, I would recommend you take a look
-at meryl-coffee
-
-[meryl-coffee](http://github.com/twilson63/meryl-coffee.git)
-
-----
-
-This is a template that can be used to create nodejs applications using 
+## Technologies
 
 * Express
 * CoffeeScript!
-* Haml
-* Sass
+* Coffeekup
 
 ## Requirements
 
-NodeJs 0.1.99
+[NodeJs](http://nodejs.org)
+[Express](http://expressjs.com)
+[Coffeekup](http://coffeekup.org/)
+
 
 ## Install
 
-    git clone http://github.com/twilson63/express-coffee.git [project-name]
+```
+# Install nodejs and npm
+npm install express
+npm install coffeekup
+
+git clone http://github.com/twilson63/express-coffee.git [project-name]
+cd [project-name]
+
+coffee app.coffee
+
+or
+
+node app.js
+
+```
+
+## Thanks to
+
+* [Jeremy Ashkenas](https://github.com/jashkenas) for creating coffee-script
+* [TJ Holowaychuk](https://github.com/visionmedia) for creating express
+* [Maurice Machado](https://github.com/mauricemach) for creating coffeekup
+
+## About
+
+Coffeekup Layout View borrowed from CoffeeKup Examples
+
+## License
+
+See LICENSE
