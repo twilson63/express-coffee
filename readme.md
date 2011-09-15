@@ -1,36 +1,46 @@
 # Express Coffee
 
-This is a template nodejs web app
+This is a template node web app
 
 ## Technologies
 This is a template that can be used to create nodejs applications using 
 
-* Express
-* CoffeeScript!
-* Coffeekup
+* Node v0.4.11
+* Express v2.4.6
+* CoffeeScript! v1.1.2
+* Coffeekup v0.3.0
 
 ## Requirements
 
 [NodeJs](http://nodejs.org)
 [Express](http://expressjs.com)
 [Coffeekup](http://coffeekup.org/)
+[Jasmine-Node](https://github.com/mhevery/jasmine-node/)
 
-
-## Install
+## Install, Build, Run, Test, and Watch
 
 ```
 # Install nodejs and npm
-npm install express
-npm install coffeekup
 
 git clone http://github.com/twilson63/express-coffee.git [project-name]
 cd [project-name]
+npm install
 
-coffee app.coffee
+# Build
 
-or
+cake build
 
-node app.js
+# Run
+
+node server.js
+
+# Test
+
+cake spec
+
+# Watch - Compile when files change.
+
+cake watch
 
 ```
 
@@ -39,8 +49,22 @@ node app.js
 * [Jeremy Ashkenas](https://github.com/jashkenas) for creating coffee-script
 * [TJ Holowaychuk](https://github.com/visionmedia) for creating express
 * [Maurice Machado](https://github.com/mauricemach) for creating coffeekup
+* [Miško Hevery](https://github.com/mhevery) for creating Jasmine-Node
+* [Pivotal Labs](http://github.com/pivotal/jasmine) for creating Jasmine
 
 ## About
+
+express-coffee is a template or boilier plate to get started writting 
+express web applications in CoffeeScript.  It comes ready to go with base
+setup for an Express Web App.  It includes a Cakefile that lets you build, 
+spec, and watch your coffeescript as you develop.  You hack in the src folder
+and run cake build to build you server files, write your jasmine tests in
+your spec folder and run cake spec to run your test suite.  Create your
+coffeekup views in the views folder and put your public assets in the public
+folder.  Enjoy your express-coffee 
+
+  ~
+c[_] 0.1.0
 
 Coffeekup Layout View borrowed from CoffeeKup Examples
 
@@ -48,8 +72,8 @@ Coffeekup Layout View borrowed from CoffeeKup Examples
 
 See LICENSE
 
-## Also Check Out
+## Ready to Deploy on Heroku
 
-[meryl-coffee](http://github.com/twilson63/meryl-coffee)
+[heroku](http://devcenter.heroku.com/articles/node-js)
 
 

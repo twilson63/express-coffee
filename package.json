@@ -1,10 +1,19 @@
 {
     "name": "express-coffee"
-  , "version": "0.0.1"
+  , "version": "v0.1.0"
   , "private": true
+  ,"directories" : {
+    "lib" : "./lib",
+    "spec": "./spec"
+  } 
   , "dependencies": {
-      "express": ">= 2.4.6"
-    , "coffee-script": ">= 1.1.2"  
-    , "coffeekup": ">= 0.0.3"
+      "express": "2.4.x" 
+    , "coffeekup": "0.3.x"
   }
+  , "devDependencies": {
+    "coffee-script": "1.1.x"
+    ,"jasmine-node": "1.x.x"
+    ,"request": "1.x.x"
+  }
+  , "engine": "node >= 0.4.11"
 }

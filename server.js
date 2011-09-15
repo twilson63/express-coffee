@@ -1,4 +1,1 @@
-require("coffee-script")
-require('./app.coffee')
-
-
+require('./lib/app')

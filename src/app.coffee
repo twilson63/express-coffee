@@ -13,4 +13,4 @@ app.get '/', (request, response) ->
   response.render 'index'
 
 # Listen
-app.listen process.env.C9_PORT
+app.listen process.env.PORT || 8000
