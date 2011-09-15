@@ -65,7 +65,7 @@ cake watch
 
 ## About
 
-express-coffee is a template or boilier plate to get started writting 
+express-coffee is a template or boiler-plate to get started writting 
 express web applications in CoffeeScript.  It comes ready to go with base
 setup for an Express Web App.  It includes a Cakefile that lets you build, 
 spec, and watch your coffeescript as you develop.  You hack in the src folder
