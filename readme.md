@@ -14,8 +14,19 @@ This is a template that can be used to create nodejs applications using
 
 * [NodeJs](http://nodejs.org)
 * [Express](http://expressjs.com)
+* [CoffeeScript](http://coffeescript.org)
 * [Coffeekup](http://coffeekup.org/)
 * [Jasmine-Node](https://github.com/mhevery/jasmine-node/)
+
+These will install with npm, just do 
+
+```
+npm install
+```
+
+In your project directory.
+
+---
 
 ## Install, Build, Run, Test, and Watch
 
