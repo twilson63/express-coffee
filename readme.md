@@ -12,10 +12,10 @@ This is a template that can be used to create nodejs applications using
 
 ## Requirements
 
-[NodeJs](http://nodejs.org)
-[Express](http://expressjs.com)
-[Coffeekup](http://coffeekup.org/)
-[Jasmine-Node](https://github.com/mhevery/jasmine-node/)
+* [NodeJs](http://nodejs.org)
+* [Express](http://expressjs.com)
+* [Coffeekup](http://coffeekup.org/)
+* [Jasmine-Node](https://github.com/mhevery/jasmine-node/)
 
 ## Install, Build, Run, Test, and Watch
 
