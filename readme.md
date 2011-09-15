@@ -74,8 +74,8 @@ your spec folder and run cake spec to run your test suite.  Create your
 coffeekup views in the views folder and put your public assets in the public
 folder.  Enjoy your express-coffee 
 
-  ~
-c[_] 0.1.0
+  ~      
+c[_] 0.1.0     
 
 Coffeekup Layout View borrowed from CoffeeKup Examples
 
