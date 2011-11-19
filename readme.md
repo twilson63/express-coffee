@@ -1,21 +1,26 @@
-# Express Coffee
+# Express Coffee Template 2
 
-This is a template node web app
+This is a Node Express CoffeeScript Stack Template
+
+It comes ready to go with connect-assets that give you the option
+to use coffee-script and stylus for the client side.
 
 ## Technologies
 This is a template that can be used to create nodejs applications using 
 
-* Node v0.4.11
+* Node v0.6.1
 * Express v2.4.6
-* CoffeeScript! v1.1.2
-* Coffeekup v0.3.0
+* CoffeeScript! v1.1.3
+* Jade v0.17.0
+* Connect Assets v2.1.5
 
 ## Requirements
 
 * [NodeJs](http://nodejs.org)
 * [Express](http://expressjs.com)
 * [CoffeeScript](http://coffeescript.org)
-* [Coffeekup](http://coffeekup.org/)
+* [Jade](http://jade-lang.org/)
+* [connect-assets](http://github.com/TrevorBurnham/connect-assets)
 * [Jasmine-Node](https://github.com/mhevery/jasmine-node/)
 
 These will install with npm, just do 
@@ -37,29 +42,16 @@ git clone http://github.com/twilson63/express-coffee.git [project-name]
 cd [project-name]
 npm install
 
-# Build
-
-cake build
 
 # Run
 
 node server.js
 
-# Test
-
-cake spec
-
-# Watch - Compile when files change.
-
-cake watch
-
-```
 
 ## Thanks to
 
 * [Jeremy Ashkenas](https://github.com/jashkenas) for creating coffee-script
 * [TJ Holowaychuk](https://github.com/visionmedia) for creating express
-* [Maurice Machado](https://github.com/mauricemach) for creating coffeekup
 * [Miško Hevery](https://github.com/mhevery) for creating Jasmine-Node
 * [Pivotal Labs](http://github.com/pivotal/jasmine) for creating Jasmine
 
@@ -75,16 +67,9 @@ coffeekup views in the views folder and put your public assets in the public
 folder.  Enjoy your express-coffee 
 
   ~      
-c[_] 0.1.0     
+c[_] 1.2.0     
 
-Coffeekup Layout View borrowed from CoffeeKup Examples
 
 ## License
 
 See LICENSE
-
-## Ready to Deploy on Heroku
-
-[heroku](http://devcenter.heroku.com/articles/node-js)
-
-
