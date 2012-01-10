@@ -6,12 +6,18 @@
       "coffee-script": "1.1.x"
     , "express": "2.5.x" 
     , "jade": "0.x.x"
-    , "connect-assets": "2.1.4"
+    , "connect-assets": "2.1.5"
     , "stylus": "*"
     , "nib": "*"
     , "markdown": "*"
   }
+  , "scripts": {
+    "test": "mocha"
+    , "start": "node server.js"
+  }
   , "devDependencies": {
+    "mocha": "*"
+    , "should": "*"
   }
   , "engine": "node ~> 0.6.x"
 }
