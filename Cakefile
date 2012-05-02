@@ -3,10 +3,10 @@ fs            = require 'fs'
 {spawn, exec} = require 'child_process'
 
 # ANSI Terminal Colors
-bold = '\033[0;1m'
-green = '\033[0;32m'
-reset = '\033[0m'
-red = '\033[0;31m'
+bold  = '\x1B[0;1m'
+red   = '\x1B[0;31m'
+green = '\x1B[0;32m'
+reset = '\x1B[0m'
 
 package = JSON.parse fs.readFileSync('./package.json')
 testCmd = package.scripts.test
