@@ -1,4 +1,4 @@
-# Express Coffee Template 2
+# Express Coffee Template 3 (1.3)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -8,11 +8,11 @@ to use coffee-script and stylus for the client side.
 ## Technologies
 This is a template that can be used to create nodejs applications using 
 
-* Node v0.6.1
-* Express v2.4.6
-* CoffeeScript! v1.1.3
-* Jade v0.17.0
-* Connect Assets v2.1.5
+* Node v0.6.17
+* Express v3.0.0alpha4
+* CoffeeScript! v1.3.3
+* Jade v0.26.0
+* Connect Assets v2.2.1
 
 ## Requirements
 
@@ -66,10 +66,11 @@ your spec folder and run cake spec to run your test suite.  Create your
 coffeekup views in the views folder and put your public assets in the public
 folder.  Enjoy your express-coffee 
 
-  ~      
-c[_] 1.2.0     
-
 
 ## License
 
 See LICENSE
+
+## Contribute
+
+pull requests are welcome
