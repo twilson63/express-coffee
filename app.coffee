@@ -2,7 +2,7 @@ express = require 'express'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 
-app = express.createServer()
+app = express()
 app.use assets()
 app.set 'view engine', 'jade'
 

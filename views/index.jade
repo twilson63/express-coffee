@@ -1,48 +1,50 @@
-.container
-  .four.columns
-    div.
-      <a href="http://www.flickr.com/photos/astrapica/2560897976/" title="Uk express... by astrapi, on Flickr"><img src="http://farm4.staticflickr.com/3049/2560897976_48257593b7.jpg" width="100%" height="120px" alt="Uk express..."></a>
-    a.button(href="https://github.com/twilson63/express-coffee/zipball/v1.2.1") Download
-    &nbsp;
-    a.button(href="https://github.com/twilson63/express-coffee") Source
-    :markdown
-      ### About
+extends layout
+block content
+  .container
+    .four.columns
+      div.
+        <a href="http://www.flickr.com/photos/astrapica/2560897976/" title="Uk express... by astrapi, on Flickr"><img src="http://farm4.staticflickr.com/3049/2560897976_48257593b7.jpg" width="100%" height="120px" alt="Uk express..."></a>
+      a.button(href="https://github.com/twilson63/express-coffee/zipball/v1.3.0") Download
+      &nbsp;
+      a.button(href="https://github.com/twilson63/express-coffee") Source
+      :markdown
+        ### About
 
-      This template was built to make it very easy to get up and going on small little prototypes and weekend projects.
+        This template was built to make it very easy to get up and going on small little prototypes and weekend projects.
 
-      ### Contact Us
+        ### Contact Us
 
-      Have questions, or would like to contribute?
+        Have questions, or would like to contribute?
 
-      * [Post an Issue](https://github.com/twilson63/express-coffee/issues)
-      * [Submit a pull request](https://github.com/twilson63/express-coffee)
-      * Follow Us on twitter! [@jackhq](http://twitter.com/jackhq)
-  .right.ten.columns.offset-by-two
-    :markdown
-      The express-coffee template is now upgraded to use node version 0.6.1 and refined to utilized a few new features to get up and running.
+        * [Post an Issue](https://github.com/twilson63/express-coffee/issues)
+        * [Submit a pull request](https://github.com/twilson63/express-coffee)
+        * Follow Us on twitter! [@jackhq](http://twitter.com/jackhq)
+    .right.ten.columns.offset-by-two
+      :markdown
+        The express-coffee template is now upgraded to use node version 0.6.17+ and refined to utilized a few new features to get up and running.
 
-      # Features
+        # Features
 
-      ### No more Compile step
+        ### No more Compile step
 
-      express-coffee template is made to quickly start putting together an application/prototype.  So we have changed the template back to automatically compile the coffee-script when you run your node app.
+        express-coffee template is made to quickly start putting together an application/prototype.  So we have changed the template back to automatically compile the coffee-script when you run your node app.
 
-      ### Rails-like Asset Pipeline
+        ### Rails-like Asset Pipeline
 
-      express-coffee template comes ready to go with connect-assets a rails like asset pipeline.  You can add your css and js to the assets folder.  Then in jade you can reference your assets using a couple of helper methods.
+        express-coffee template comes ready to go with connect-assets a rails like asset pipeline.  You can add your css and js to the assets folder.  Then in jade you can reference your assets using a couple of helper methods.
 
-           != css('mycss') 
-           #= Pull from /assets/css/mycss.styl
+             != css('mycss') 
+             #= Pull from /assets/css/mycss.styl
 
-           != js('app') 
-           #= Pull from /assets/js/app.coffee or app.js
+             != js('app') 
+             #= Pull from /assets/js/app.coffee or app.js
 
-      See [connect-assets](http://github.com/TrevorBurnham/connect-assets) for more information
+        See [connect-assets](http://github.com/TrevorBurnham/connect-assets) for more information
 
-      ### Jade as the default template language
+        ### Jade as the default template language
 
-      express-coffee template as switched to jade as the default template language.  It seems to be the clear winner and the most mature at this point.  The rich featureset of integrating markdown and coffeescript and other helpers is big plus for getting things up fast.
+        express-coffee template as switched to jade as the default template language.  It seems to be the clear winner and the most mature at this point.  The rich featureset of integrating markdown and coffeescript and other helpers is big plus for getting things up fast.
 
-      ### Skeleton CSS as the default responsive grid
+        ### Skeleton CSS as the default responsive grid
 
-      skeleton is clean and basic and can easily be adjusted.
+        skeleton is clean and basic and can easily be adjusted.
