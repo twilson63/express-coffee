@@ -19,7 +19,7 @@ This is a template that can be used to create nodejs applications using
 * [NodeJs](http://nodejs.org)
 * [Express](http://expressjs.com)
 * [CoffeeScript](http://coffeescript.org)
-* [Jade](http://jade-lang.org/)
+* [Jade](http://jade-lang.com/)
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
 * [Mocha](http://visionmedia.github.com/mocha/)
 * [Should.Js](https://github.com/visionmedia/should.js/)
