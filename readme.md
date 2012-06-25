@@ -42,11 +42,38 @@ In your project directory.
 git clone http://github.com/twilson63/express-coffee.git [project-name]
 cd [project-name]
 npm install
-
+```
 
 # Run
 
-node server.js
+```
+cake dev
+```
+
+### Mocha and Request for testing
+
+mocha is an extremely powerful and easy to use testing framework
+
+see [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/)
+
+    describe 'Sample test', ->
+      it 'should be true', ->
+        true.should.equal true
+
+to run mocha
+
+    cake test
+
+### Setup to deploy to heroku
+
+    rm -rf .git
+    git init
+    echo 'node_modules' >> '.gitignore'
+    git add .
+    git commit -am "first commit"
+    heroku create
+    git push heroku master
+    heroku open
 
 
 ## Thanks to
