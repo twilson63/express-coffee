@@ -25,9 +25,16 @@ block content
 
         # Features
 
-        ### No more Compile step
+        ### Automated Compile Step
 
-        express-coffee template is made to quickly start putting together an application/prototype.  So we have changed the template back to automatically compile the coffee-script when you run your node app.
+        express-coffee template is made to quickly start putting together an application/prototype.  
+
+        Now you can run cake dev and when every coffee file is changed it will rebuild the app.
+        
+        Also, it includes supervisor, which will restart you application everytime you change your views or js files.
+
+            cake dev
+
 
         ### Rails-like Asset Pipeline
 
@@ -35,7 +42,6 @@ block content
 
              != css('mycss') 
              #= Pull from /assets/css/mycss.styl
-
              != js('app') 
              #= Pull from /assets/js/app.coffee or app.js
 
@@ -45,6 +51,38 @@ block content
 
         express-coffee template as switched to jade as the default template language.  It seems to be the clear winner and the most mature at this point.  The rich featureset of integrating markdown and coffeescript and other helpers is big plus for getting things up fast.
 
+            extends layout
+            block content
+              .container
+                .four.columns
+                  :markdown
+                    # Hello World
+
         ### Skeleton CSS as the default responsive grid
 
         skeleton is clean and basic and can easily be adjusted.
+
+        ### Mocha and Request for testing
+        
+        mocha is an extremely powerful and easy to use testing framework
+        
+        see [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/)
+
+            describe 'Sample test', ->
+              it 'should be true', ->
+                true.should.equal true
+
+        to run mocha
+
+            cake test
+
+        ### Setup to deploy to heroku
+        
+            rm -rf .git
+            git init
+            echo 'node_modules' >> '.gitignore'
+            git add .
+            git commit -am "first commit"
+            heroku create
+            git push heroku master
+            heroku open

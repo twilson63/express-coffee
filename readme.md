@@ -1,4 +1,4 @@
-# Express Coffee Template 3 (1.3)
+# Express Coffee Template 4 (1.4)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -21,7 +21,8 @@ This is a template that can be used to create nodejs applications using
 * [CoffeeScript](http://coffeescript.org)
 * [Jade](http://jade-lang.org/)
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
-* [Jasmine-Node](https://github.com/mhevery/jasmine-node/)
+* [Mocha](http://visionmedia.github.com/mocha/)
+* [Should.Js](https://github.com/visionmedia/should.js/)
 
 These will install with npm, just do 
 
@@ -53,7 +54,7 @@ node server.js
 * [Jeremy Ashkenas](https://github.com/jashkenas) for creating coffee-script
 * [TJ Holowaychuk](https://github.com/visionmedia) for creating express
 * [Miško Hevery](https://github.com/mhevery) for creating Jasmine-Node
-* [Pivotal Labs](http://github.com/pivotal/jasmine) for creating Jasmine
+* [TJ Holowaychuk](https://github.com/visionmedia) for creating mocha and should.js
 
 ## About
 
@@ -61,9 +62,9 @@ express-coffee is a template or boiler-plate to get started writting
 express web applications in CoffeeScript.  It comes ready to go with base
 setup for an Express Web App.  It includes a Cakefile that lets you build, 
 spec, and watch your coffeescript as you develop.  You hack in the src folder
-and run cake build to build you server files, write your jasmine tests in
-your spec folder and run cake spec to run your test suite.  Create your
-coffeekup views in the views folder and put your public assets in the public
+and run cake build to build you server files, write your mocha in
+your test folder and run cake test or spec to run your test suite.  Create your
+jade views in the views folder and put your public assets in the public
 folder.  Enjoy your express-coffee 
 
 
