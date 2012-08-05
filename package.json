@@ -1,9 +1,9 @@
 {
     "name": "express-coffee"
-  , "version": "1.4.1"
+  , "version": "1.5.0"
   , "private": true
   , "dependencies": {
-    "express": "3.0.0alpha4" 
+    "express": "3.x" 
     , "jade": "0.26.0"
     , "connect-assets": "2.2.1"
     , "stylus": "0.27.0"
