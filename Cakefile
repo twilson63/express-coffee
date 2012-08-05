@@ -39,13 +39,13 @@ test = (callback) ->
   ]
   fs.exists './node_modules/mocha/bin/mocha', (exists) ->
     if exists
-      #cmd = which.sync './node_modules/mocha/bin/mocha' 
-      spec = spawn './node_modules/mocha/bin/mocha', options
+      cmd = which.sync 'mocha' 
+      spec = spawn cmd, options
       spec.stdout.pipe process.stdout 
       spec.stderr.pipe process.stderr
       spec.on 'exit', (status) -> callback?() if status is 0
     else
-      log 'Mocha is not installed - try npm install', red
+      log 'Mocha is not installed - try npm install mocha -g', red
 
 task 'docs', 'Generate annotated source code with Docco', ->
   fs.readdir 'src', (err, contents) ->
