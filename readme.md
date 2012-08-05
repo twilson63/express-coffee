@@ -1,4 +1,4 @@
-# Express Coffee Template 4 (1.4)
+# Express Coffee Template 5 (1.5)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -9,7 +9,7 @@ to use coffee-script and stylus for the client side.
 This is a template that can be used to create nodejs applications using 
 
 * Node v0.6.17
-* Express v3.0.0alpha4
+* Express v3.0.0rc2
 * CoffeeScript! v1.3.3
 * Jade v0.26.0
 * Connect Assets v2.2.1
@@ -42,6 +42,14 @@ In your project directory.
 git clone http://github.com/twilson63/express-coffee.git [project-name]
 cd [project-name]
 npm install
+```
+
+## Install coffee-script, mocha and docco
+
+``` sh
+npm install coffee-script -g
+npm install mocha -g
+npm install docco -g
 ```
 
 # Run
