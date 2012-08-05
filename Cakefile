@@ -53,7 +53,6 @@ task 'docs', 'Generate annotated source code with Docco', ->
     try
       cmd = which.sync 'docco' 
       docco = spawn cmd, files
-      docco.pipe process.stdout
       docco.stdout.pipe process.stdout
       docco.stderr.pipe process.stderr
       docco.on 'exit', (status) -> callback?() if status is 0
