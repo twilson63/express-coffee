@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Express-coffee by twilson63</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/twilson63/express-coffee">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/twilson63/express-coffee/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/twilson63/express-coffee/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Express-coffee</h1>
+          <p>A Template for NodeJs Application using Express, CoffeeScript, Jade, Stylus, Nib</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/twilson63">twilson63</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Express Coffee Template 5 (1.5)</h1>
+
+<p>This is a Node Express CoffeeScript Stack Template</p>
+
+<p>It comes ready to go with connect-assets that give you the option
+to use coffee-script and stylus for the client side.</p>
+
+<h2>Technologies</h2>
+
+<p>This is a template that can be used to create nodejs applications using </p>
+
+<ul>
+<li>Node v0.6.17</li>
+<li>Express v3.0.0rc2</li>
+<li>CoffeeScript! v1.3.3</li>
+<li>Jade v0.26.0</li>
+<li>Connect Assets v2.2.1</li>
+</ul><h2>Requirements</h2>
+
+<ul>
+<li><a href="http://nodejs.org">NodeJs</a></li>
+<li><a href="http://expressjs.com">Express</a></li>
+<li><a href="http://coffeescript.org">CoffeeScript</a></li>
+<li><a href="http://jade-lang.com/">Jade</a></li>
+<li><a href="http://github.com/TrevorBurnham/connect-assets">connect-assets</a></li>
+<li><a href="http://visionmedia.github.com/mocha/">Mocha</a></li>
+<li><a href="https://github.com/visionmedia/should.js/">Should.Js</a></li>
+</ul><p>These will install with npm, just do </p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>In your project directory.</p>
+
+<hr><h2>Install, Build, Run, Test, and Watch</h2>
+
+<pre><code># Install nodejs and npm
+
+git clone http://github.com/twilson63/express-coffee.git [project-name]
+cd [project-name]
+npm install
+</code></pre>
+
+<h2>Install coffee-script, mocha and docco</h2>
+
+<div class="highlight"><pre>npm install coffee-script -g
+npm install mocha -g
+npm install docco -g
+</pre></div>
+
+<h1>Run</h1>
+
+<pre><code>cake dev
+</code></pre>
+
+<h3>Mocha and Request for testing</h3>
+
+<p>mocha is an extremely powerful and easy to use testing framework</p>
+
+<p>see <a href="http://visionmedia.github.com/mocha/">http://visionmedia.github.com/mocha/</a></p>
+
+<pre><code>describe 'Sample test', -&gt;
+  it 'should be true', -&gt;
+    true.should.equal true
+</code></pre>
+
+<p>to run mocha</p>
+
+<pre><code>cake test
+</code></pre>
+
+<h3>Setup to deploy to heroku</h3>
+
+<pre><code>rm -rf .git
+git init
+echo 'node_modules' &gt;&gt; '.gitignore'
+git add .
+git commit -am "first commit"
+heroku create
+git push heroku master
+heroku open
+</code></pre>
+
+<h2>Thanks to</h2>
+
+<ul>
+<li>
+<a href="https://github.com/jashkenas">Jeremy Ashkenas</a> for creating coffee-script</li>
+<li>
+<a href="https://github.com/visionmedia">TJ Holowaychuk</a> for creating express</li>
+<li>
+<a href="https://github.com/mhevery">Miško Hevery</a> for creating Jasmine-Node</li>
+<li>
+<a href="https://github.com/visionmedia">TJ Holowaychuk</a> for creating mocha and should.js</li>
+</ul><h2>About</h2>
+
+<p>express-coffee is a template or boiler-plate to get started writting 
+express web applications in CoffeeScript.  It comes ready to go with base
+setup for an Express Web App.  It includes a Cakefile that lets you build, 
+spec, and watch your coffeescript as you develop.  You hack in the src folder
+and run cake build to build you server files, write your mocha in
+your test folder and run cake test or spec to run your test suite.  Create your
+jade views in the views folder and put your public assets in the public
+folder.  Enjoy your express-coffee </p>
+
+<h2>License</h2>
+
+<p>See LICENSE</p>
+
+<h2>Contribute</h2>
+
+<p>pull requests are welcome</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-9459466-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
