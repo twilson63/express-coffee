@@ -50,12 +50,16 @@ test = (callback) ->
 task 'docs', 'Generate annotated source code with Docco', ->
   fs.readdir 'src', (err, contents) ->
     files = ("src/#{file}" for file in contents when /\.coffee$/.test file)
-    cmd = which.sync 'docco' 
-    docco = spawn cmd, files
-    docco.pipe process.stdout
-    docco.stdout.pipe process.stdout
-    docco.stderr.pipe process.stderr
-    docco.on 'exit', (status) -> callback?() if status is 0
+    try
+      cmd = which.sync 'docco' 
+      docco = spawn cmd, files
+      docco.pipe process.stdout
+      docco.stdout.pipe process.stdout
+      docco.stderr.pipe process.stderr
+      docco.on 'exit', (status) -> callback?() if status is 0
+    catch err
+      log err.message, red
+      log 'Docco is not installed - try npm install docco -g', red
 
 
 task 'build', ->
