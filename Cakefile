@@ -43,7 +43,7 @@ test = (callback) ->
     spec.stdout.pipe process.stdout 
     spec.stderr.pipe process.stderr
     spec.on 'exit', (status) -> callback?() if status is 0
-  catch(err)
+  catch err
     log err.message, red
     log 'Mocha is not installed - try npm install mocha -g', red
 
