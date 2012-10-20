@@ -1,0 +1,17 @@
+extends ../layout
+block content
+  form(method="post", action="/posts/create")
+    fieldset
+      legend=title
+      .clearfix
+        label(for="title") Title
+        .input
+          input.xlarge#title(type="text", name="post[title]")
+      .clearfix
+        label(for="post") Post
+        .input
+          textarea#post.xxlarge(name="post[body]",rows="3")
+      .actions
+        input.btn.primary(type="submit", value="Publish!")
+        |   
+        a.btn(href="/") Cancel

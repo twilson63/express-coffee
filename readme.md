@@ -13,6 +13,7 @@ This is a template that can be used to create nodejs applications using
 * CoffeeScript! v1.3.3
 * Jade v0.26.0
 * Connect Assets v2.2.1
+* MongoDB
 
 ## Requirements
 
@@ -23,6 +24,8 @@ This is a template that can be used to create nodejs applications using
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
 * [Mocha](http://visionmedia.github.com/mocha/)
 * [Should.Js](https://github.com/visionmedia/should.js/)
+* [Mongoose](https://github.com/LearnBoost/mongoose)
+* [Foundation](http://foundation.zurb.com/)
 
 These will install with npm, just do 
 
