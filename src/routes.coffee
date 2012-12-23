@@ -39,16 +39,7 @@ routeMvc = (controllerName, methodName, req, res, next)->
 		methodName = methodName.replace(/[^a-z0-9A-Z_-]/i,'')
 		method=eval('controller  .'+methodName)
 		if method?
-			data = {}
-			method req, data, (isApi)->
-				if not data?
-					throw new Error("Controller's return value not implemented!")
-				if isApi					
-					# send JSON based on api
-					res.send data
-				else
-					#render page
-					res.render  controllerName, data
+			method req, res, next
 	else
 		console.warn 'method not found: ' +methodName
 		next()
