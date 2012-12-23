@@ -21,7 +21,11 @@ app.use(express["static"](process.cwd() + '/public'));
 
 app.set('view engine', 'jade');
 
-app.get("/", posts.index);
+app.get('/', function(req, resp) {
+  return resp.render('index');
+});
+
+app.get("/posts/", posts.index);
 
 app.get("/posts/new", posts["new"]);
 

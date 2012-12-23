@@ -13,8 +13,12 @@ app.use assets()
 app.use express.static(process.cwd() + '/public')
 # Set View Engine
 app.set 'view engine', 'jade'
+
+app.get '/', (req, resp) -> 
+  resp.render 'index'
+
 # Get root_path return index view
-app.get "/", posts.index
+app.get "/posts/", posts.index
 app.get "/posts/new", posts.new
 app.post "/posts/create", posts.create
 
