@@ -30,6 +30,8 @@ build = (callback) ->
 # mocha test
 test = (callback) ->
   options = [
+    '--globals'
+    'hasCert'
     '--compilers'
     'coffee:coffee-script'
     '--colors'
