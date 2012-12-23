@@ -1,4 +1,9 @@
+puts = require 'puts'
+
+
 request = require 'supertest'
+
+
 app = require process.cwd() + '/.app'
 
 describe 'Ping Pong', ->
@@ -14,7 +19,8 @@ describe 'Ping Pong', ->
       .post("/ping/pong/#{id}?q=something")
       .send(pongData)
       .expect(200, (err, res) ->
-        # puts res
+        puts {"hello":["some"]}
+      
         res.body.should.have.property "pongQuery"
         res.body.should.have.property "pongBody"
         res.body.should.have.property "id"

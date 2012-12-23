@@ -1,3 +1,5 @@
+
+
 # Just sends hello world in JSON
 exports.index = (req, res) ->
   data = {"hello":["world"]}
@@ -5,8 +7,6 @@ exports.index = (req, res) ->
   
 # Sends anything from request back as JSON
 exports.pong = (req, res) ->
-  require('treeify').puts req.body
-
   data = 
     pongQuery: req.query
     pongBody: req.body
