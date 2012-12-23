@@ -12,6 +12,7 @@
     , "markdown": "0.3.1"
     , "which": "*"
     , "mongoose": "*"
+    , "wrench": "*"
   }, "scripts": {
     "install": "node_modules/coffee-script/bin/cake build",
     "start": "node server.js",

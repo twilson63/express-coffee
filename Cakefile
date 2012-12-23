@@ -1,4 +1,5 @@
 fs            = require 'fs'
+wrench        = require 'wrench'
 {print}       = require 'util'
 which         = require('which')
 {spawn, exec} = require 'child_process'
@@ -48,17 +49,19 @@ test = (callback) ->
     log 'Mocha is not installed - try npm install mocha -g', red
 
 task 'docs', 'Generate annotated source code with Docco', ->
-  fs.readdir 'src', (err, contents) ->
-    files = ("src/#{file}" for file in contents when /\.coffee$/.test file)
-    try
-      cmd = which.sync 'docco' 
-      docco = spawn cmd, files
-      docco.stdout.pipe process.stdout
-      docco.stderr.pipe process.stderr
-      docco.on 'exit', (status) -> callback?() if status is 0
-    catch err
-      log err.message, red
-      log 'Docco is not installed - try npm install docco -g', red
+  files = wrench.readdirSyncRecursive("src")
+  log files
+  files = ("src/#{file}" for file in files when /\.coffee$/.test file)
+  log files
+  try
+    cmd = which.sync 'docco' 
+    docco = spawn cmd, files
+    docco.stdout.pipe process.stdout
+    docco.stderr.pipe process.stderr
+    docco.on 'exit', (status) -> callback?() if status is 0
+  catch err
+    log err.message, red
+    log 'Docco is not installed - try npm install docco -g', red
 
 
 task 'build', ->
