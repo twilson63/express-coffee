@@ -5,12 +5,13 @@ exports.index = (req, res) ->
   
 # Sends anything from request back as JSON
 exports.pong = (req, res) ->
+  require('treeify').puts req.body
+
   data = 
-    query: req.query
-    body: req.body
-    params: req.params
-    route: req.route
-    cookies: req.cookies
+    pongQuery: req.query
+    pongBody: req.body
+    pongParams: req.params
+    pongCookies: req.cookies
     id: req.params.id
     controller: req.params.controller
     method: req.params.method

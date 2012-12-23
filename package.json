@@ -21,9 +21,11 @@
       "coffee-script": "*"
     , "mocha": "*"
     , "should": "*"
+    , "supertest": "*"
     , "request": "*"
     , "supervisor": "*"
     , "docco-husky": "*"
+    , "treeify": "git://github.com/darvin/node-treeify.git"
   }, 
   "engines": {
     "node": "~0.8.x",

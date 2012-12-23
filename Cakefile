@@ -31,7 +31,7 @@ build = (callback) ->
 test = (callback) ->
   options = [
     '--globals'
-    'hasCert'
+    'hasCert,res'
     '--compilers'
     'coffee:coffee-script'
     '--colors'

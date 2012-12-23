@@ -17,6 +17,8 @@ mongoose.connect 'mongodb://localhost/example'
 app.use assets()
 # Set the public folder as static assets
 app.use express.static(process.cwd() + '/public')
+
+app.use express.bodyParser() 
 # Set View Engine
 app.set 'view engine', 'jade'
 
@@ -27,7 +29,6 @@ routes(app)
 
 
 # Define Port
-port = process.env.PORT or process.env.VMC_APP_PORT or 3000
-# Start Server
-app.listen port, -> 
-console.log "Listening on #{port}\nPress CTRL-C to stop server."
+app.port = process.env.PORT or process.env.VMC_APP_PORT or 3000
+module.exports = app
+
