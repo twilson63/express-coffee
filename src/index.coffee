@@ -4,8 +4,15 @@ stylus = require 'stylus'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
 
-mongoose.connect 'mongodb://localhost/example'
+# Create app instance
 app = express()
+
+# set instance running environments. they have to match those in config.coffee
+config = require "./config"
+app.configure 'production', 'development', 'testing', ->
+	config.setEnvironment app.settings.env
+
+mongoose.connect 'mongodb://localhost/example'
 # Add Connect Assets
 app.use assets()
 # Set the public folder as static assets
@@ -22,4 +29,5 @@ routes(app)
 # Define Port
 port = process.env.PORT or process.env.VMC_APP_PORT or 3000
 # Start Server
-app.listen port, -> console.log "Listening on #{port}\nPress CTRL-C to stop server."
+app.listen port, -> 
+console.log "Listening on #{port}\nPress CTRL-C to stop server."
