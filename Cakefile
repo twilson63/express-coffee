@@ -32,6 +32,8 @@ test = (callback) ->
   options = [
     '--globals'
     'hasCert,res'
+    '--reporter'
+    'spec'
     '--compilers'
     'coffee:coffee-script'
     '--colors'
