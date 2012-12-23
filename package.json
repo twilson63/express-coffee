@@ -23,7 +23,7 @@
     , "should": "*"
     , "request": "*"
     , "supervisor": "*"
-    , "docco": "*"
+    , "docco-husky": "*"
   }, 
   "engines": {
     "node": "~0.8.x",

@@ -52,11 +52,10 @@ test = (callback) ->
 
 task 'docs', 'Generate annotated source code with Docco', ->
   files = wrench.readdirSyncRecursive("src")
-  log files
   files = ("src/#{file}" for file in files when /\.coffee$/.test file)
   log files
   try
-    cmd = which.sync 'docco' 
+    cmd ='./node_modules/.bin/docco-husky' 
     docco = spawn cmd, files
     docco.stdout.pipe process.stdout
     docco.stderr.pipe process.stderr

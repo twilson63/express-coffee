@@ -1,13 +1,134 @@
-<!DOCTYPE html>  <html> <head>   <title>index.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="posts.html">                 posts.coffee               </a>                                           <a class="source" href="index.html">                 index.coffee               </a>                                           <a class="source" href="post.html">                 post.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               index.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="nv">posts = </span><span class="nx">require</span> <span class="s">&#39;./controllers/posts&#39;</span>
+<!DOCTYPE html><html><head><title>README</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="./docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="./index.html" class="source"><span class="file_name">README</span></a><a href="./src/config/index.coffee.html" class="source "><span class="base_path">src / config / </span><span class="file_name">index.coffee</span></a><a href="./src/controllers/index.coffee.html" class="source "><span class="base_path">src / controllers / </span><span class="file_name">index.coffee</span></a><a href="./src/controllers/posts.coffee.html" class="source "><span class="base_path">src / controllers / </span><span class="file_name">posts.coffee</span></a><a href="./src/index.coffee.html" class="source "><span class="base_path">src / </span><span class="file_name">index.coffee</span></a><a href="./src/models/post.coffee.html" class="source "><span class="base_path">src / models / </span><span class="file_name">post.coffee</span></a><a href="./src/routes.coffee.html" class="source "><span class="base_path">src / </span><span class="file_name">routes.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"></th><th class="code"></th></tr></thead><tbody><tr id="section"><td class="docs"><h1>express-coffee
+</h1><h3>Version</h3><p>1.5.1</p><h3>Dependencies </h3><ul><li><b>express </b><span>3.x</span></li><li><b>coffee-script </b><span>1.4.0</span></li><li><b>jade </b><span>0.26.0</span></li><li><b>connect-assets </b><span>2.3.3</span></li><li><b>stylus </b><span>0.27.x</span></li><li><b>nib </b><span>0.9.0</span></li><li><b>markdown </b><span>0.4.0</span></li><li><b>which </b><span>*</span></li><li><b>mongoose </b><span>*</span></li><li><b>wrench </b><span>*</span></li></ul><p><h3>Stats</h3><pre class="code_stats">
+http://cloc.sourceforge.net v 1.55  T=0.5 s (12.0 files/s, 320.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+CoffeeScript                     6             28             22            110
+-------------------------------------------------------------------------------
+SUM:                             6             28             22            110
+-------------------------------------------------------------------------------
+</pre></p></td><td id="content" class="code"><h1>Express Coffee Template 5 (1.5)</h1>
 
-<span class="nv">express = </span><span class="nx">require</span> <span class="s">&#39;express&#39;</span>
-<span class="nv">stylus = </span><span class="nx">require</span> <span class="s">&#39;stylus&#39;</span>
-<span class="nv">assets = </span><span class="nx">require</span> <span class="s">&#39;connect-assets&#39;</span>
-<span class="nv">mongoose = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+<p>This is a Node Express CoffeeScript Stack Template</p>
 
-<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span> <span class="s">&#39;mongodb://localhost/example&#39;</span>
-<span class="nv">app = </span><span class="nx">express</span><span class="p">()</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>Add Connect Assets</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">assets</span><span class="p">()</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Set the public folder as static assets</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">static</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;/public&#39;</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Set View Engine</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">&#39;view engine&#39;</span><span class="p">,</span> <span class="s">&#39;jade&#39;</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Get root_path return index view</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">index</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&quot;/posts/new&quot;</span><span class="p">,</span> <span class="nx">posts</span><span class="p">.</span><span class="k">new</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">post</span> <span class="s">&quot;/posts/create&quot;</span><span class="p">,</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">create</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Define Port</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">port = </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">or</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VMC_APP_PORT</span> <span class="o">or</span> <span class="mi">3000</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Start Server</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span> <span class="nx">port</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;Listening on </span><span class="si">#{</span><span class="nx">port</span><span class="si">}</span><span class="s">\nPress CTRL-C to stop server.&quot;</span>
+<p>It comes ready to go with connect-assets that give you the option
+to use coffee-script and stylus for the client side.</p>
 
-</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
+<h2>Technologies</h2>
+
+<p>This is a template that can be used to create nodejs applications using </p>
+
+<ul>
+<li>Node v0.6.17</li>
+<li>Express v3.0.0rc2</li>
+<li>CoffeeScript! v1.3.3</li>
+<li>Jade v0.26.0</li>
+<li>Connect Assets v2.2.1</li>
+<li>MongoDB</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<ul>
+<li><a href="http://nodejs.org">NodeJs</a></li>
+<li><a href="http://expressjs.com">Express</a></li>
+<li><a href="http://coffeescript.org">CoffeeScript</a></li>
+<li><a href="http://jade-lang.com/">Jade</a></li>
+<li><a href="http://github.com/TrevorBurnham/connect-assets">connect-assets</a></li>
+<li><a href="http://visionmedia.github.com/mocha/">Mocha</a></li>
+<li><a href="https://github.com/visionmedia/should.js/">Should.Js</a></li>
+<li><a href="https://github.com/LearnBoost/mongoose">Mongoose</a></li>
+<li><a href="http://foundation.zurb.com/">Foundation</a></li>
+</ul>
+
+<p>These will install with npm, just do </p>
+
+<p><code>
+npm install
+</code></p>
+
+<p>In your project directory.</p>
+
+<hr />
+
+<h2>Install, Build, Run, Test, and Watch</h2>
+
+<p>```</p>
+
+<h1>Install nodejs and npm</h1>
+
+<p>git clone http://github.com/twilson63/express-coffee.git [project-name]
+cd [project-name]
+npm install
+```</p>
+
+<h2>Install coffee-script, mocha and docco</h2>
+
+<p><code>sh
+npm install coffee-script -g
+npm install mocha -g
+npm install docco -g
+</code></p>
+
+<h1>Run</h1>
+
+<p><code>
+cake dev
+</code></p>
+
+<h3>Mocha and Request for testing</h3>
+
+<p>mocha is an extremely powerful and easy to use testing framework</p>
+
+<p>see <a href="http://visionmedia.github.com/mocha/">http://visionmedia.github.com/mocha/</a></p>
+
+<pre><code>describe 'Sample test', -&gt;
+  it 'should be true', -&gt;
+    true.should.equal true
+</code></pre>
+
+<p>to run mocha</p>
+
+<pre><code>cake test
+</code></pre>
+
+<h3>Setup to deploy to heroku</h3>
+
+<pre><code>rm -rf .git
+git init
+echo 'node_modules' &gt;&gt; '.gitignore'
+git add .
+git commit -am "first commit"
+heroku create
+git push heroku master
+heroku open
+</code></pre>
+
+<h2>Thanks to</h2>
+
+<ul>
+<li><a href="https://github.com/jashkenas">Jeremy Ashkenas</a> for creating coffee-script</li>
+<li><a href="https://github.com/visionmedia">TJ Holowaychuk</a> for creating express</li>
+<li><a href="https://github.com/mhevery">Miško Hevery</a> for creating Jasmine-Node</li>
+<li><a href="https://github.com/visionmedia">TJ Holowaychuk</a> for creating mocha and should.js</li>
+</ul>
+
+<h2>About</h2>
+
+<p>express-coffee is a template or boiler-plate to get started writting 
+express web applications in CoffeeScript.  It comes ready to go with base
+setup for an Express Web App.  It includes a Cakefile that lets you build, 
+spec, and watch your coffeescript as you develop.  You hack in the src folder
+and run cake build to build you server files, write your mocha in
+your test folder and run cake test or spec to run your test suite.  Create your
+jade views in the views folder and put your public assets in the public
+folder.  Enjoy your express-coffee </p>
+
+<h2>License</h2>
+
+<p>See LICENSE</p>
+
+<h2>Contribute</h2>
+
+<p>pull requests are welcome</p>  </td></tr></tbody></table><div id="generated">generated Sun Dec 23 2012 01:35:34 GMT-0800 (PST)  </div></div></body></html>
