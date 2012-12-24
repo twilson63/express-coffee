@@ -85,9 +85,41 @@ task 'dev', 'start dev env', ->
   coffee.stderr.pipe process.stderr
   log 'Watching coffee files', green
   # watch_js
-  supervisor = spawn 'node', ['./node_modules/supervisor/lib/cli-wrapper.js','-w','.app,views', '-e', 'js|jade', 'server']
+  supervisor = spawn 'node', [
+    './node_modules/supervisor/lib/cli-wrapper.js',
+    '-w',
+    '.app,views', 
+    '-e', 
+    'js|jade', 
+    'server'
+  ]
   supervisor.stdout.pipe process.stdout
   supervisor.stderr.pipe process.stderr
   log 'Watching js files and running server', green
+  
+task 'debug', 'start debug env', ->
+  # watch_coffee
+  options = ['-c', '-b', '-w', '-o', '.app', 'src']
+  cmd = which.sync 'coffee'  
+  coffee = spawn cmd, options
+  coffee.stdout.pipe process.stdout
+  coffee.stderr.pipe process.stderr
+  log 'Watching coffee files', green
+  # run debug mode
+  app = spawn 'node', [
+    '--debug',
+    'server'
+  ]
+  app.stdout.pipe process.stdout
+  app.stderr.pipe process.stderr
+  # run node-inspector
+  inspector = spawn 'node-inspector'
+  inspector.stdout.pipe process.stdout
+  inspector.stderr.pipe process.stderr
+  # run google chrome
+  chrome = spawn 'google-chrome', ['http://0.0.0.0:8080/debug?port=5858']
+  chrome.stdout.pipe process.stdout
+  chrome.stderr.pipe process.stderr
+  log 'Debugging server', green
 
   

@@ -26,6 +26,7 @@
     , "supervisor": "*"
     , "docco-husky": "*"
     , "puts": "*"
+    , "node-inspector": "*"
   }, 
   "engines": {
     "node": "~0.8.x",
