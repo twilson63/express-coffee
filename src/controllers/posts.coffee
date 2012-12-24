@@ -1,6 +1,8 @@
 Post = require '../models/Post'
+
 # Post model's CRUD controller.
 module.exports = 
+
   # Lists all posts
   index: (req, res) ->
     Post.find {}, (err, posts) ->
@@ -25,8 +27,7 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
-      
-        
+             
   # Updates post with data from `req.body`
   update: (req, res) ->
     Post.findByIdAndUpdate req.params.id, {"$set":req.body}, (err, post) ->
@@ -36,6 +37,7 @@ module.exports =
         res.send err
         res.statusCode = 500
     
+  # Deletes post by id
   delete: (req, res) ->
     Post.findByIdAndRemove req.params.id, (err) ->
       if not err
