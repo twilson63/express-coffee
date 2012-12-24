@@ -1,85 +1,81 @@
 request = require 'supertest'
 
-<% name | capitalize %> = require process.cwd() + '/.app/models/<% name | capitalize %>'
+<%=: name | capitalize %> = require process.cwd() + '/.app/models/<%=: name | capitalize %>'
 app = require process.cwd() + '/.app'
 
 
-POST_DATA = {
-  "title":"SomeTitle",
-  "body":"body of <% name %>",
-  "url":"some url"
+INITIAL_DATA = {
+  "someField":"Some Data"
 }
 
-UPDATED_POST_DATA = {
-  "title":"Another title",
-  "body":"another body of <% name %>",
-  "url":"some another url"
+UPDATED_DATA = {
+  "someField":"Another data"
 }
 
 cleanDB = (done) ->
-  <% name | capitalize %>.remove {}, ->
+  <%=: name | capitalize %>.remove {}, ->
     done()
 
-describe '<% name | capitalize %>', ->
+describe '<%=: name | capitalize %>', ->
   before cleanDB
   
-  <% name %>_id = null
+  <%=: name %>_id = null
       
   it "should be created", (done) ->
     request(app)
-      .<% name %>("/<% name %>s/create")
-      .send(POST_DATA)
+      .post("/<%=: name %>s/create")
+      .send(INITIAL_DATA)
       .expect 201, (err, res) ->
-        res.body.should.include(POST_DATA)
+        res.body.should.include(INITIAL_DATA)
         res.body.should.have.property "_id"
         res.body["_id"].should.be.ok
-        <% name %>_id = res.body["_id"]
+        <%=: name %>_id = res.body["_id"]
         done()
         
   it "should be accessible by id", (done) ->
     request(app)
-      .get("/<% name %>s/get/#{<% name %>_id}")
+      .get("/<%=: name %>s/get/#{<%=: name %>_id}")
       .expect 200, (err, res) ->
-        res.body.should.include(POST_DATA)
+        res.body.should.include(INITIAL_DATA)
         res.body.should.have.property "_id"
-        res.body["_id"].should.be.eql <% name %>_id
+        res.body["_id"].should.be.eql <%=: name %>_id
         done()
         
   it "should be listed in list", (done) ->
     request(app)
-      .get("/<% name %>s")
+      .get("/<%=: name %>s")
       .expect 200, (err, res) ->
         res.body.should.be.an.instanceof Array
         res.body.should.have.length 1
-        res.body[0].should.include(POST_DATA)
+        res.body[0].should.include(INITIAL_DATA)
         done()
     
   it "should be updated", (done) ->
     request(app)
-      .<% name %>("/<% name %>s/update/#{<% name %>_id}")
-      .send(UPDATED_POST_DATA)
+      .post("/<%=: name %>s/update/#{<%=: name %>_id}")
+      .send(UPDATED_DATA)
       .expect 200, (err, res) ->
-        res.body.should.include(UPDATED_POST_DATA)
+        res.body.should.include(UPDATED_DATA)
         done()
         
   it "should be persisted after update", (done) ->
     request(app)
-      .get("/<% name %>s/get/#{<% name %>_id}")
+      .get("/<%=: name %>s/get/#{<%=: name %>_id}")
       .expect 200, (err, res) ->
-        res.body.should.include(UPDATED_POST_DATA)
+        res.body.should.include(UPDATED_DATA)
         res.body.should.have.property "_id"
-        res.body["_id"].should.be.eql <% name %>_id
+        res.body["_id"].should.be.eql <%=: name %>_id
         done()
   
   it "should be removed", (done) ->
     request(app)
-      .del("/<% name %>s/delete/#{<% name %>_id}")
+      .del("/<%=: name %>s/delete/#{<%=: name %>_id}")
       .expect 200, (err, res) ->
         done()
     
   it "should not be listed after remove", (done) ->
     request(app)
-      .get("/<% name %>s")
+      .get("/<%=: name %>s")
       .expect 200, (err, res) ->
         res.body.should.be.an.instanceof Array
         res.body.should.have.length 0
