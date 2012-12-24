@@ -8,6 +8,7 @@ describe 'Post', ->
   before (done) ->
     Post.remove {}, ->
       done()
+      
   it "should be created", (done) ->
     postData = {
       "title":"SomeTitle",

@@ -1,14 +1,5 @@
-# === config file for the whole APP ===
-
-###
-exports.DEBUG_LOG: log  debug info when nothing is wrong
-exports.DEBUG_WARN: when there is an abnormality caused by user, e.g. a malicious URL
-exports.DEBUG_ERROR: things should never happen. like a DB error
-exports.DEBUG_CLIENT: print debug info to browser's console 
-things prefixed with DB_: database stuff
-###
-
-# === set parameters based on environment ===
+#### Config file
+# Sets application config parameters depending on `env` name
 exports.setEnvironment = (env) ->
 	console.log "set app environment: #{env}"
 	switch(env)

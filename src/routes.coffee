@@ -1,18 +1,22 @@
-# Routing
+#### Routes
+# We are setting up theese routes:
+#
 
 
 module.exports  = (app) ->
-
-	# MVC pages
+  #   - _/_ -> controllers/index/index method
 	app.all '/', (req, res, next)->
 		routeMvc('index', 'index', req, res, next)
 
+  #   - _/**:controller**_  -> controllers/***:controller***/index method
 	app.all '/:controller' , (req, res, next)->
 		routeMvc(req.params.controller, 'index',req,res, next)
-
+  
+  #   - _/**:controller**/**:method**_ -> controllers/***:controller***/***:method*** method
 	app.all '/:controller/:method' , (req, res, next)->
 		routeMvc(req.params.controller, req.params.method, req,res,next)
 
+  #   - _/**:controller**/**:method**/**:id**_ -> controllers/***:controller***/***:method*** method with ***:id*** param passed
 	app.all '/:controller/:method/:id' , (req, res, next)->
 		routeMvc(req.params.controller, req.params.method,req,res, next)
 
@@ -21,9 +25,8 @@ module.exports  = (app) ->
 		console.warn "error 404: ", req.url
 		res.render '404',404
 
-# render the page based on controller, method and id
+# render the page based on controller name, method and id
 routeMvc = (controllerName, methodName, req, res, next)->
-	console.info "mvc page, controller: "+controllerName+", method: "+methodName+", id: "+req.params.id
 	controllerName='index' if not controllerName?
 	controller=null
 	try
@@ -32,7 +35,6 @@ routeMvc = (controllerName, methodName, req, res, next)->
 		console.warn "controller not found: "+ controllerName, e
 		next()
 		return
-
 	data=null
 	if methodName?
 		# eval is evil, so sanitize it
