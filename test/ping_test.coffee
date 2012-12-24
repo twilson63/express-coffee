@@ -1,4 +1,3 @@
-puts = require 'puts'
 
 
 request = require 'supertest'
@@ -18,9 +17,7 @@ describe 'Ping Pong', ->
     request(app)
       .post("/ping/pong/#{id}?q=something")
       .send(pongData)
-      .expect(200, (err, res) ->
-        puts {"hello":["some"]}
-      
+      .expect(200, (err, res) ->      
         res.body.should.have.property "pongQuery"
         res.body.should.have.property "pongBody"
         res.body.should.have.property "id"

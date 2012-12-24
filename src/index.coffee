@@ -8,9 +8,6 @@ mongoose = require 'mongoose'
 # Create app instance.
 app = express()
 
-# Initialize routes
-routes = require './routes'
-routes(app)
 
 # Define Port
 app.port = process.env.PORT or process.env.VMC_APP_PORT or 3000
@@ -24,8 +21,6 @@ app.configure 'production', 'development', 'testing', ->
 # TODO: move to `config`
 mongoose.connect 'mongodb://localhost/example'
 
-# [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
-app.use express.bodyParser()
 
 
 #### View initialization 
@@ -38,7 +33,16 @@ app.use express.static(process.cwd() + '/public')
 # Set View Engine.
 app.set 'view engine', 'jade'
 
+# [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
+app.use express.bodyParser()
+
+
 #### Finalization
+# Initialize routes
+routes = require './routes'
+routes(app)
+
+
 # Export application object
 module.exports = app
 

@@ -1,5 +1,4 @@
 
-
 # Sends `{"hello":["world"]}` in JSON
 exports.index = (req, res) ->
   data = {"hello":["world"]}
