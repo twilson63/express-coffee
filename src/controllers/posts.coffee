@@ -16,5 +16,32 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
+        
+  # Gets post by id
+  get: (req, res) ->
+    Post.findById req.params.id, (err, post) ->
+      if not err
+        res.send post
+      else
+        res.send err
+        res.statusCode = 500
+      
+        
+  # Updates post with data from `req.body`
+  update: (req, res) ->
+    Post.findByIdAndUpdate req.params.id, {"$set":req.body}, (err, post) ->
+      if not err
+        res.send post
+      else
+        res.send err
+        res.statusCode = 500
+    
+  delete: (req, res) ->
+    Post.findByIdAndRemove req.params.id, (err) ->
+      if not err
+        res.send {}
+      else
+        res.send err
+        res.statusCode = 500
       
   
