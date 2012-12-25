@@ -12,7 +12,7 @@ module.exports = function(name) {
       console.log("! "+outputName+" already exists!");
       process.exit(1);
     }
-    var template = fs.readFileSync(templateName, "utf-8");
+    var template = fs.readFileSync(__dirname+"/"+templateName, "utf-8");
     var renderedTemplate = ejs.render(template, renderParams);
     fs.writeFileSync(appDir+outputName, renderedTemplate);
     console.log("# "+outputName+" created");

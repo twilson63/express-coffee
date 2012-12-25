@@ -1,7 +1,7 @@
 fs            = require 'fs'
 wrench        = require 'wrench'
 {print}       = require 'util'
-which         = require('which')
+which         = require 'which'
 {spawn, exec} = require 'child_process'
 
 # ANSI Terminal Colors
@@ -121,5 +121,16 @@ task 'debug', 'start debug env', ->
   chrome.stdout.pipe process.stdout
   chrome.stderr.pipe process.stderr
   log 'Debugging server', green
+  
+option '-n', '--name [NAME]', 'name of model to `scaffold`'
+task 'scaffold', 'scaffold model/controller/test', (options) ->
+  if not options.name?
+    log "Please specify model name", red
+    process.exit(1)
+  log "Scaffolding `#{options.name}`", green
+  scaffold = require './scaffold'
+  scaffold options.name
+  
+
 
   
