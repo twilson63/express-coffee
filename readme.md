@@ -1,4 +1,4 @@
-# Express Coffee Template 5 (1.5)
+# Express Coffee Template 6 (1.6)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -8,11 +8,11 @@ to use coffee-script and stylus for the client side.
 ## Technologies
 This is a template that can be used to create nodejs applications using 
 
-* Node v0.6.17
-* Express v3.0.0rc2
-* CoffeeScript! v1.3.3
+* Node v0.8.*
+* Express v3.0.5
+* CoffeeScript! v1.4.0
 * Jade v0.26.0
-* Connect Assets v2.2.1
+* Connect Assets v2.3.3
 * MongoDB
 
 ## Requirements
@@ -96,7 +96,7 @@ to run mocha
 
 ## About
 
-express-coffee is a template or boiler-plate to get started writting 
+express-coffee is a template or boiler-plate to get started writing 
 express web applications in CoffeeScript.  It comes ready to go with base
 setup for an Express Web App.  It includes a Cakefile that lets you build, 
 spec, and watch your coffeescript as you develop.  You hack in the src folder
