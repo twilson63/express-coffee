@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><title>index.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../../index.html" class="source"><span class="file_name">README</span></a><a href="../../src/config/index.coffee.html" class="source selected"><span class="base_path">src / config / </span><span class="file_name">index.coffee</span></a><a href="../../src/controllers/index.coffee.html" class="source "><span class="base_path">src / controllers / </span><span class="file_name">index.coffee</span></a><a href="../../src/controllers/ping.coffee.html" class="source "><span class="base_path">src / controllers / </span><span class="file_name">ping.coffee</span></a><a href="../../src/controllers/posts.coffee.html" class="source "><span class="base_path">src / controllers / </span><span class="file_name">posts.coffee</span></a><a href="../../src/index.coffee.html" class="source "><span class="base_path">src / </span><span class="file_name">index.coffee</span></a><a href="../../src/models/post.coffee.html" class="source "><span class="base_path">src / models / </span><span class="file_name">post.coffee</span></a><a href="../../src/routes.coffee.html" class="source "><span class="base_path">src / </span><span class="file_name">routes.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>index.coffee</h1><div class="filepath">src/config/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><h3>Config file</h3>
+
+<p>Sets application config parameters depending on <code>env</code> name</p>
+</td><td class="code"><div class="highlight"><pre><span class="nv">exports.setEnvironment = </span><span class="nf">(env) -&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;set app environment: </span><span class="si">#{</span><span class="nx">env</span><span class="si">}</span><span class="s">&quot;</span>
+  <span class="k">switch</span><span class="p">(</span><span class="nx">env</span><span class="p">)</span>
+    <span class="k">when</span> <span class="s">&quot;development&quot;</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_LOG</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_WARN</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_ERROR</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_CLIENT</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nv">exports.DB_HOST = </span><span class="s">&#39;localhost&#39;</span>
+      <span class="nv">exports.DB_PORT = </span><span class="s">&quot;3306&quot;</span>
+      <span class="nv">exports.DB_NAME = </span><span class="s">&#39;mvc_example&#39;</span>
+      <span class="nv">exports.DB_USER = </span><span class="s">&#39;root&#39;</span>
+      <span class="nv">exports.DB_PASS = </span><span class="s">&#39;root&#39;</span>
+
+    <span class="k">when</span> <span class="s">&quot;testing&quot;</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_LOG</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_WARN</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_ERROR</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_CLIENT</span><span class="o">=</span><span class="kc">true</span>
+
+    <span class="k">when</span> <span class="s">&quot;production&quot;</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_LOG</span><span class="o">=</span><span class="kc">false</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_WARN</span><span class="o">=</span><span class="kc">false</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_ERROR</span><span class="o">=</span><span class="kc">true</span>
+      <span class="nx">exports</span><span class="p">.</span><span class="nx">DEBUG_CLIENT</span><span class="o">=</span><span class="kc">false</span>
+    <span class="k">else</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;environment </span><span class="si">#{</span><span class="nx">env</span><span class="si">}</span><span class="s"> not found&quot;</span>
+
+</pre></div></td></tr></tbody></table><div id="generated">generated Sun Dec 23 2012 16:04:40 GMT-0800 (PST)  </div></div></body></html>

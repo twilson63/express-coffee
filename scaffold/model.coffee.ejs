@@ -1,0 +1,8 @@
+mongoose = require 'mongoose'
+
+# <%=: name | capitalize %> model
+<%=: name | capitalize %> = new mongoose.Schema(
+  someField: String
+)
+
+module.exports = mongoose.model '<%=: name | capitalize %>', <%=: name | capitalize %>
