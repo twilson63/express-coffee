@@ -1,4 +1,4 @@
-Post = require '../models/Post'
+Post = require '../models/post'
 
 # Post model's CRUD controller.
 module.exports = 

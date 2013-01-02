@@ -1,6 +1,6 @@
 request = require 'supertest'
 
-Post = require process.cwd() + '/.app/models/Post'
+Post = require process.cwd() + '/.app/models/post'
 app = require process.cwd() + '/.app'
 
 

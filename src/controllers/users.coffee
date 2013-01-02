@@ -1,4 +1,4 @@
-User = require '../models/User'
+User = require '../models/user'
 
 # User model's CRUD controller.
 module.exports = 
