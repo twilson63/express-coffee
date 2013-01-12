@@ -18,10 +18,9 @@ config = require "./config"
 app.configure 'production', 'development', 'testing', ->
 	config.setEnvironment app.settings.env
 
-# TODO: move to `config`
-mongoose.connect 'mongodb://localhost/example'
+db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
 
-
+mongoose.connect db_config
 
 #### View initialization 
 # Add Connect Assets.
