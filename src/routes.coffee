@@ -39,12 +39,9 @@ routeMvc = (controllerName, methodName, req, res, next)->
     next()
     return
   data=null
-  if methodName?
-    # eval is evil, so sanitize it
-    methodName = methodName.replace(/[^a-z0-9A-Z_-]/i,'')
-    method=eval('controller  .'+methodName)
-    if method?
-      method req, res, next
+  if typeof controller[methodName] is 'function'
+    actionMethod = controller[methodName].bind controller
+    actionMethod req, res, next
   else
     console.warn 'method not found: ' +methodName
     next()
