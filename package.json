@@ -1,10 +1,10 @@
 {
     "name": "express-coffee"
-  , "version": "0.1.6"
+  , "version": "0.1.7"
   , "private": true
   , "dependencies": {
       "express": "3.x" 
-    , "coffee-script": "1.4.0"
+    , "coffee-script": "1.5.0"
     , "jade": "0.26.0"
     , "connect-assets": "2.3.3"
     , "stylus": "0.27.x"
