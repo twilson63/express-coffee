@@ -10,7 +10,7 @@ This is a template that can be used to create nodejs applications using
 
 * Node v0.8.*
 * Express v3.0.5
-* CoffeeScript! v1.4.0
+* CoffeeScript! v1.5.0
 * Jade v0.26.0
 * Connect Assets v2.3.3
 * MongoDB
