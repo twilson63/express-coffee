@@ -1,4 +1,4 @@
-# Express Coffee Template 6 (1.6)
+# Express Coffee Template 7 (1.7)
 
 This is a Node Express CoffeeScript Stack Template
 
