@@ -20,9 +20,10 @@ app.configure 'production', 'development', 'testing', ->
 
 # db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
 # mongoose.connect db_config
-
-mongoose.connect 'mongodb://localhost/example'
-
+if app.settings.env != 'production'
+  mongoose.connect 'mongodb://localhost/example'
+else
+  console.log('If you are running in production, you may want to modify the mongoose connect path')
 
 #### View initialization 
 # Add Connect Assets.
