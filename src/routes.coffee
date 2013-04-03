@@ -4,23 +4,22 @@
 # GET, POST, PUT, DELETE methods are going to the same controller methods - we dont care.
 # We are using method names to determine controller actions for clearness.
 
-
 module.exports = (app) ->
   #   - _/_ -> controllers/index/index method
   app.all '/', (req, res, next) ->
     routeMvc('index', 'index', req, res, next)
 
   #   - _/**:controller**_  -> controllers/***:controller***/index method
-  app.all '/:controller' , (req, res, next) ->
-    routeMvc(req.params.controller, 'index',req,res, next)
+  app.all '/:controller', (req, res, next) ->
+    routeMvc(req.params.controller, 'index', req, res, next)
 
   #   - _/**:controller**/**:method**_ -> controllers/***:controller***/***:method*** method
-  app.all '/:controller/:method' , (req, res, next) ->
-    routeMvc(req.params.controller, req.params.method, req,res,next)
+  app.all '/:controller/:method', (req, res, next) ->
+    routeMvc(req.params.controller, req.params.method, req, res, next)
 
   #   - _/**:controller**/**:method**/**:id**_ -> controllers/***:controller***/***:method*** method with ***:id*** param passed
-  app.all '/:controller/:method/:id' , (req, res, next) ->
-    routeMvc(req.params.controller, req.params.method,req,res, next)
+  app.all '/:controller/:method/:id', (req, res, next) ->
+    routeMvc(req.params.controller, req.params.method, req, res, next)
 
   # If all else failed, show 404 page
   app.all '/*', (req, res) ->
