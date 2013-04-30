@@ -1,18 +1,18 @@
 {
     "name": "express-coffee"
-  , "version": "0.1.7"
+  , "version": "0.1.8"
   , "private": true
   , "dependencies": {
       "express": "3.x" 
-    , "coffee-script": "1.5.0"
-    , "jade": "0.26.0"
-    , "connect-assets": "2.3.3"
-    , "stylus": "0.27.x"
-    , "nib": "0.9.0"
+    , "coffee-script": "1.6.x"
+    , "jade": "0.30.x"
+    , "connect-assets": "2.4.0"
+    , "stylus": "0.32.x"
+    , "nib": "0.9.x"
     , "markdown": "0.4.0"
-    , "passport": "0.1.15"
+    , "passport": "0.1.16"
     , "which": "1.0.5"
-    , "mongoose": "3.5.3"
+    , "mongoose": "3.6.*"
     , "wrench": "1.4.4"
   }, "scripts": {
     "install": "node node_modules/coffee-script/bin/cake build",
@@ -31,7 +31,7 @@
     , "ejs": "*"
   }, 
   "engines": {
-    "node": "~0.8.x",
-    "npm": "1.1.x"
+    "node": "~0.10.x",
+    "npm": "1.2.x"
   }
 }

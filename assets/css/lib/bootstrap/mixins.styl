@@ -1,0 +1,704 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Color methods
+// --------------------------------------------------
+
+// Implementation of the mix method
+// See: https://github.com/LearnBoost/stylus/issues/549
+
+mix(a, b, m)
+  require-color a
+  require-color b
+  if unit(m) is '%'
+    m = unit((m / 100), '')
+  n = 1 - m
+  return a * m +  b * n
+
+spin(color, degs)
+  color + degs
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Webkit-style focus
+// ------------------
+tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Center-align a block level element
+// ----------------------------------
+center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// IE7 inline-block
+// ----------------
+ie7-inline-block() {
+  *display: inline; // IE7 inline-block hack
+  *zoom: 1;
+}
+
+// IE7 likes to collapse whitespace on either side of the inline-block elements.
+// Ems because we're attempting to match the width of a space character. Left
+// version is for form buttons, which typically come after other elements, and
+// right version is for icons, which come before. Applying both is ok, but it will
+// mean that space between those elements will be .6em (~2 space characters) in IE7,
+// instead of the 1 space in other browsers.
+ie7-restore-left-whitespace() {
+  *margin-left: .3em;
+
+  &:first-child {
+    *margin-left: 0;
+  }
+}
+
+ie7-restore-right-whitespace() {
+  *margin-right: .3em;
+}
+
+// Sizing shortcuts
+// -------------------------
+size(height, width) {
+  width: width;
+  height: height;
+}
+square(size) {
+  size(size, size);
+}
+
+// Placeholder text
+// -------------------------
+placeholder(color = $placeholderText) {
+  &:-moz-placeholder {
+    color: color;
+  }
+  &:-ms-input-placeholder {
+    color: color;
+  }
+  &::-webkit-input-placeholder {
+    color: color;
+  }
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+// FONTS
+// --------------------------------------------------
+
+
+
+fontFamilySerif() {
+  font-family: $serifFontFamily;
+}
+fontFamilySans-serif() {
+  font-family: $sansFontFamily;
+}
+fontFamilyMonospace() {
+  font-family: $monoFontFamily;
+}
+
+fontShorthand(size = $baseFontSize, weight = normal, lineHeight = $baseLineHeight) {
+  font-size: size;
+  font-weight: weight;
+  line-height: lineHeight;
+}
+fontSerif(size = $baseFontSize, weight = normal, lineHeight = $baseLineHeight) {
+  fontFamilySerif()
+  fontShorthand(size, weight, lineHeight);
+}
+fontSans-serif(size = $baseFontSize, weight = normal, lineHeight = $baseLineHeight) {
+  fontFamilySans-serif()
+  fontShorthand(size, weight, lineHeight);
+}
+fontMonospace(size = $baseFontSize, weight = normal, lineHeight = $baseLineHeight) {
+  fontFamilyMonospace()
+  fontShorthand(size, weight, lineHeight);
+}
+
+
+
+// FORMS
+// --------------------------------------------------
+
+// Block level inputs
+input-block-level() {
+  display: block;
+  width: 100%;
+  min-height: $inputHeight; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  box-sizing(border-box); // Makes inputs behave like true block-level elements
+}
+
+
+
+// Mixin for form field states
+formFieldState(textColor = #555, borderColor = #ccc, backgroundColor = #f5f5f5) {
+  // Set the text color
+  .control-label,
+  .help-block,
+  .help-inline {
+    color: textColor;
+  }
+  // Style inputs accordingly
+  .checkbox,
+  .radio,
+  input,
+  select,
+  textarea {
+    color: textColor;
+  }
+  input,
+  select,
+  textarea {
+    border-color: borderColor;
+    box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken(borderColor, 10%);
+      box-shadow inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(borderColor, 20%);
+    }
+  }
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: textColor;
+    background-color: backgroundColor;
+    border-color: textColor;
+  }
+}
+
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+// Border Radius
+border-radius(radius) {
+  vendor('border-radius', arguments)
+}
+
+// Single Corner Border Radius
+border-top-left-radius(radius) {
+  -webkit-border-top-left-radius: radius;
+      -moz-border-radius-topleft: radius;
+          border-top-left-radius: radius;
+}
+border-top-right-radius(radius) {
+  -webkit-border-top-right-radius: radius;
+      -moz-border-radius-topright: radius;
+          border-top-right-radius: radius;
+}
+border-bottom-right-radius(radius) {
+  -webkit-border-bottom-right-radius: radius;
+      -moz-border-radius-bottomright: radius;
+          border-bottom-right-radius: radius;
+}
+border-bottom-left-radius(radius) {
+  -webkit-border-bottom-left-radius: radius;
+      -moz-border-radius-bottomleft: radius;
+          border-bottom-left-radius: radius;
+}
+
+// Single Side Border Radius
+border-top-radius(radius) {
+  border-top-right-radius(radius);
+  border-top-left-radius(radius);
+}
+border-right-radius(radius) {
+  border-top-right-radius(radius);
+  border-bottom-right-radius(radius);
+}
+border-bottom-radius(radius) {
+  border-bottom-right-radius(radius);
+  border-bottom-left-radius(radius);
+}
+border-left-radius(radius) {
+  border-top-left-radius(radius);
+  border-bottom-left-radius(radius);
+}
+
+// Drop shadows
+box-shadow(shadow) {
+  vendor('box-shadow', arguments)
+}
+
+// Transitions
+transition(transition) {
+  vendor('transition', arguments)
+}
+transition-delay(transition-delay) {
+  vendor('transition-delay', arguments)
+}
+transition-duration(transition-duration) {
+  vendor('transition-duration', arguments)
+}
+
+// Transformations
+rotate(degrees) {
+  vendor('transform', s("rotate(%s)", degrees))
+}
+
+scale(ratio) {
+  vendor('transform', s("scale(%s)", ratio))
+}
+
+translate(x, y) {
+  vendor('transform', s("translate(%s, %s)", x, y))
+}
+
+skew(x, y) {
+  vendor('transform', s("skew(%s, %s)", $x, $y))
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+translate3d(x, y, z) {
+  vendor('transform', s("translate(%s, %s, %s)", x, y, z))
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+backface-visibility(visibility){
+	-webkit-backface-visibility: visibility;
+	   -moz-backface-visibility: visibility;
+	        backface-visibility: visibility;
+}
+
+// Background clipping
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+background-clip(clip) {
+  vendor('background-clip', clip)
+}
+
+// Background sizing
+background-size(size) {
+  vendor('background-size', size)
+}
+
+
+// Box sizing
+box-sizing(boxmodel) {
+  vendor('box-sizing', boxmodel);
+}
+
+
+
+// User select
+// For selecting text on the page
+user-select(select) {
+  vendor('user-select', select);
+}
+
+// Resize anything
+resizable(direction) {
+  resize: direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+content-columns(columnCount, columnGap = $gridGutterWidth) {
+  -webkit-column-count: columnCount;
+     -moz-column-count: columnCount;
+          column-count: columnCount;
+  -webkit-column-gap: columnGap;
+     -moz-column-gap: columnGap;
+          column-gap: columnGap;
+}
+
+// Optional hyphenation
+hyphens(mode = auto) {
+  word-wrap: break-word;
+  vendor('hyphens', mode);
+}
+
+// Opacity
+opacity(opacity) {
+  opacity: (opacity/100);
+  filter: 'alpha(opacity=%s)' % opacity;
+}
+
+
+
+// BACKGROUNDS
+// --------------------------------------------------
+
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+translucentBackground(color = $white, alpha = 1) {
+  background-color: hsla(hue(color), saturation(color), lightness(color), alpha);
+}
+translucentBorder(color = $white, alpha = 1) {
+  border-color: hsla(hue(color), saturation(color), lightness(color), alpha);
+  background-clip(padding-box);
+}
+
+// Gradient Bar Colors for buttons and alerts
+gradientBar(primaryColor, secondaryColor, textColor = #fff, textShadow = 0 -1px 0 rgba(0,0,0,.25)) {
+  color: textColor;
+  text-shadow: textShadow;
+  gradient-vertical(primaryColor, secondaryColor);
+  border-color: secondaryColor secondaryColor darken(secondaryColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+}
+
+// Gradients
+
+gradient-horizontal(startColor = #555, endColor = #333) {
+  background-color: endColor;
+  background-image: -moz-linear-gradient(left, startColor, endColor); // FF 3.6+
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(startColor), to(endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(left, startColor, endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(left, startColor, endColor); // Opera 11.10
+  background-image: linear-gradient(to right, startColor, endColor); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=1)",startColor,endColor); // IE9 and down
+}
+gradient-vertical(startColor = #555, endColor = #333) {
+  background-color: mix(startColor, endColor, 60%);
+  background-image: -moz-linear-gradient(top, startColor, endColor); // FF 3.6+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(startColor), to(endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, startColor, endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, startColor, endColor); // Opera 11.10
+  background-image: linear-gradient(to bottom, startColor, endColor); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)",startColor,endColor); // IE9 and down
+}
+gradient-directional(startColor = #555, endColor = #333, deg = 45deg) {
+  background-color: endColor;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(deg, startColor, endColor); // FF 3.6+
+  background-image: -webkit-linear-gradient(deg, startColor, endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(deg, startColor, endColor); // Opera 11.10
+  background-image: linear-gradient(deg, startColor, endColor); // Standard, IE10
+}
+gradient-vertical-three-colors(startColor = #00b3ee, midColor = #7a43b6, colorStop = 50%, endColor = #c3325f) {
+  background-color: mix(midColor, endColor, 80%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(startColor), color-stop(colorStop, midColor), to(endColor));
+  background-image: -webkit-linear-gradient(startColor, midColor colorStop, endColor);
+  background-image: -moz-linear-gradient(top, startColor, midColor colorStop, endColor);
+  background-image: -o-linear-gradient(startColor, midColor colorStop, endColor);
+  background-image: linear-gradient(startColor, midColor colorStop, endColor);
+  background-repeat: no-repeat;
+  filter: s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)",startColor,endColor); // IE9 and down, gets no color-stop at all for proper fallback
+}
+gradient-radial(innerColor = #555, outerColor = #333) {
+  background-color: outerColor;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(innerColor), to(outerColor));
+  background-image: -webkit-radial-gradient(circle, innerColor, outerColor);
+  background-image: -moz-radial-gradient(circle, innerColor, outerColor);
+  background-image: -o-radial-gradient(circle, innerColor, outerColor);
+  background-repeat: no-repeat;
+}
+gradient-striped(color = #555, angle = 45deg) {
+  background-color: color;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+}
+
+// Reset filters for IE
+reset-filter() {
+  filter: s("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+
+
+
+// COMPONENT MIXINS
+// --------------------------------------------------
+
+// Horizontal dividers
+// -------------------------
+// Dividers (basically an hr) within dropdowns and nav lists
+nav-divider(top = #e5e5e5, bottom = $white) {
+  // IE7 needs a set width since we gave a height. Restricting just
+  // to IE7 to keep the 1px left/right space in other browsers.
+  // It is unclear where IE is getting the extra space that we need
+  // to negative-margin away, but so it goes.
+  *width: 100%;
+  height: 1px;
+  margin: (($baseLineHeight / 2) - 1) 1px; // 8px 1px
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: top;
+  border-bottom: 1px solid bottom;
+}
+
+// Button backgrounds
+// ------------------
+buttonBackground(startColor, endColor, textColor = #fff, textShadow = 0 -1px 0 rgba(0,0,0,.25)) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  gradientBar(startColor, endColor, textColor, textShadow);
+  *background-color: endColor; // Darken IE7 buttons by default so they stand out more given they won't have borders
+  reset-filter();
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    color: textColor;
+    background-color: endColor;
+    *background-color: darken(endColor, 5%);
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(endColor, 10%) e("\9");
+  }
+}
+
+// Navbar vertical align
+// -------------------------
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
+navbarVerticalAlign(elementHeight) {
+  margin-top: (($navbarHeight - elementHeight) / 2);
+}
+
+
+
+// Grid System
+// -----------
+
+// Centered container element
+container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  clearfix();
+}
+
+// Table columns
+tableColumns(columnSpan = 1) {
+  float: none; // undo default grid column styles
+  width: ($gridColumnWidth * columnSpan) + ($gridGutterWidth * (columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
+  margin-left: 0; // undo default grid column styles
+}
+
+
+
+// Le grid system
+// -------------------------
+// Setup the mixins to be used
+
+gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, columns)
+  width: (gridColumnWidth * columns) + (gridGutterWidth * (columns - 1))
+
+gridSystem-offset(gridColumnWidth, gridGutterWidth, columns)
+  margin-left: (gridColumnWidth * columns) + (gridGutterWidth * (columns - 1)) + (gridGutterWidth * 2)
+
+gridSystem-gridColumn(gridGutterWidth)
+  float: left
+  min-height: 1px;
+  margin-left: gridGutterWidth
+
+// Take these values and mixins, and make 'em do their thang
+
+gridSystem-generate(gridColumns, gridColumnWidth, gridGutterWidth)
+  // Row surrounds the columns
+  .row
+    margin-left: gridGutterWidth * (-1)
+    clearfix()
+  // Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7, thanks dhg)
+  [class*="span"]
+    gridSystem-gridColumn(gridGutterWidth)
+  // Default columns
+  .span1
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 1)
+  .span2
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 2)
+  .span3
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 3)
+  .span4
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 4)
+  .span5
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 5)
+  .span6
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 6)
+  .span7
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 7)
+  .span8
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 8)
+  .span9
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 9)
+  .span10
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 10)
+  .span11
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 11)
+  .span12,
+  .container
+    gridSystem-columns(gridGutterWidth, gridColumnWidth, gridRowWidth, 12)
+  // Offset column options
+  .offset1
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 1)
+  .offset2
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 2)
+  .offset3
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 3)
+  .offset4
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 4)
+  .offset5
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 5)
+  .offset6
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 6)
+  .offset7
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 7)
+  .offset8
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 8)
+  .offset9
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 9)
+  .offset10
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 10)
+  .offset11
+    gridSystem-offset(gridColumnWidth, gridGutterWidth, 11)
+
+// Fluid grid system
+// -------------------------
+// Setup the mixins to be used
+
+fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, columns)
+  width: 1% * (fluidGridColumnWidth * columns) + (fluidGridGutterWidth * (columns - 1))
+
+fluidGridSystem-gridColumn(fluidGridGutterWidth)
+  display: block;
+  float: left
+  min-height: 30px;
+  margin-left: 1% * fluidGridGutterWidth
+  box-sizing(border-box);
+  // Take these values and mixins, and make 'em do their thang
+
+fluidGridSystem-generate(gridColumns, fluidGridColumnWidth, fluidGridGutterWidth)
+  // Row surrounds the columns
+  .row-fluid
+    width: 100%
+    clearfix()
+    // Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7, thanks @dhg)
+    [class*="span"]
+      fluidGridSystem-gridColumn(fluidGridGutterWidth)
+    [class*="span"]:first-child
+      margin-left: 0
+    // Default columns
+    .span1
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 1)
+    .span2
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 2)
+    .span3
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 3)
+    .span4
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 4)
+    .span5
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 5)
+    .span6
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 6)
+    .span7
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 7)
+    .span8
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 8)
+    .span9
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 9)
+    .span10
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 10)
+    .span11
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 11)
+    .span12
+      fluidGridSystem-columns(fluidGridGutterWidth, fluidGridColumnWidth, 12)
+
+// Input grid system
+// -------------------------
+inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, columns)
+  width: ((gridColumnWidth) * columns) + (gridGutterWidth * (columns - 1)) - 10
+
+inputGridSystem-generate(gridColumns, gridColumnWidth, gridGutterWidth)
+  input,
+  select,
+  textarea,
+  .uneditable-input
+    &[class*="span"]
+      float none
+      margin-left 0
+    &.span1
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 1)
+    &.span2
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 2)
+    &.span3
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 3)
+    &.span4
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 4)
+    &.span5
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 5)
+    &.span6
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 6)
+    &.span7
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 7)
+    &.span8
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 8)
+    &.span9
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 9)
+    &.span10
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 10)
+    &.span11
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 11)
+    &.span12
+      inputGridSystem-inputColumns(gridGutterWidth, gridColumnWidth, gridRowWidth, 12)
+
+
+// Make a Grid
+// -------------------------
+// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
+makeRow()
+  margin-left: $gridGutterWidth * (-1)
+  clearfix()
+
+makeColumn(columns = 1)
+  float: left
+  margin-left: $gridGutterWidth
+  width: ($gridColumnWidth * columns) + ($gridGutterWidth * (columns - 1))

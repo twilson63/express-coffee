@@ -12,6 +12,9 @@ This is a template that can be used to create nodejs applications using
 * Express v3.0.5
 * CoffeeScript! v1.5.0
 * Jade v0.26.0
+* Stylus v0.27.* 
+* bootstrap-stylus 2.3.1 (not a npm module)
+* Nib v0.9.0
 * Connect Assets v2.3.3
 * MongoDB
 
@@ -21,6 +24,9 @@ This is a template that can be used to create nodejs applications using
 * [Express](http://expressjs.com)
 * [CoffeeScript](http://coffeescript.org)
 * [Jade](http://jade-lang.com/)
+* [Stylus](http://learnboost.github.io/stylus/)
+* [bootstrap-stylus](https://github.com/Acquisio/bootstrap-stylus)
+* [Nib](http://visionmedia.github.io/nib/)
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
 * [Mocha](http://visionmedia.github.com/mocha/)
 * [Should.Js](https://github.com/visionmedia/should.js/)
