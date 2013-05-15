@@ -29,7 +29,13 @@ else
 app.use assets()
 # Set the public folder as static assets.
 app.use express.static(process.cwd() + '/public')
- 
+# Express Session
+store = new express.session.MemoryStore
+app.use express.cookieParser()
+app.use express.session(
+  secret: 'shhh'
+  store: store
+) 
 
 # Set View Engine.
 app.set 'view engine', 'jade'

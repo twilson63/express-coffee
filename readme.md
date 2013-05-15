@@ -1,4 +1,4 @@
-# Express Coffee Template 7 (1.7)
+# Express Coffee Template 8 (1.8)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -8,15 +8,15 @@ to use coffee-script and stylus for the client side.
 ## Technologies
 This is a template that can be used to create nodejs applications using 
 
-* Node v0.8.*
+* Node v0.8.x
 * Express v3.0.5
 * CoffeeScript! v1.5.0
 * Jade v0.26.0
-* Stylus v0.27.* 
+* Stylus v0.27.x 
 * bootstrap-stylus 2.3.1 (not a npm module)
 * Nib v0.9.0
 * Connect Assets v2.3.3
-* MongoDB
+* MongoDB / Mongoose 3.6.x
 
 ## Requirements
 
