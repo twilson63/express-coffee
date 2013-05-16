@@ -5,6 +5,19 @@
 # We are using method names to determine controller actions for clearness.
 
 module.exports = (app) ->
+  
+  # simple session authorization
+  checkAuth = (req, res, next) ->
+    unless req.session.authorized
+      res.statusCode = 401
+      res.render '401', 401
+    else
+      next()
+  
+
+  app.all '/private', checkAuth, (req, res, next) ->
+    routeMvc('private', 'index', req, res, next)  
+  
   #   - _/_ -> controllers/index/index method
   app.all '/', (req, res, next) ->
     routeMvc('index', 'index', req, res, next)
