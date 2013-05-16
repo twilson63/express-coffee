@@ -1,34 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Express-coffee by twilson63</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/twilson63/express-coffee">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/twilson63/express-coffee/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/twilson63/express-coffee/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <header>
-      <div class="container">
-        <h1>Express-coffee</h1>
-        <h2>A Template for NodeJs Application using Express, CoffeeScript, Jade, Stylus, Nib</h2>
+    <div class="wrapper">
 
-        <section id="downloads">
-          <a href="https://github.com/twilson63/express-coffee/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/twilson63/express-coffee/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/twilson63/express-coffee" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <section>
+        <div id="title">
+          <h1>Express-coffee</h1>
+          <p>A Template for NodeJs Application using Express, CoffeeScript, Jade, Stylus, Nib</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/twilson63">twilson63</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
 
-    <div class="container">
-      <section id="main_content">
-        <h1>Express Coffee Template 7 (1.7)</h1>
+        <h1>Express Coffee Template 8 (1.8)</h1>
 
 <p>This is a Node Express CoffeeScript Stack Template</p>
 
@@ -40,12 +50,15 @@ to use coffee-script and stylus for the client side.</p>
 <p>This is a template that can be used to create nodejs applications using </p>
 
 <ul>
-<li>Node v0.8.*</li>
+<li>Node v0.8.x</li>
 <li>Express v3.0.5</li>
 <li>CoffeeScript! v1.5.0</li>
 <li>Jade v0.26.0</li>
+<li>Stylus v0.27.x </li>
+<li>bootstrap-stylus 2.3.1 (not a npm module)</li>
+<li>Nib v0.9.0</li>
 <li>Connect Assets v2.3.3</li>
-<li>MongoDB</li>
+<li>MongoDB / Mongoose 3.6.x</li>
 </ul><h2>Requirements</h2>
 
 <ul>
@@ -53,6 +66,9 @@ to use coffee-script and stylus for the client side.</p>
 <li><a href="http://expressjs.com">Express</a></li>
 <li><a href="http://coffeescript.org">CoffeeScript</a></li>
 <li><a href="http://jade-lang.com/">Jade</a></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+<li><a href="https://github.com/Acquisio/bootstrap-stylus">bootstrap-stylus</a></li>
+<li><a href="http://visionmedia.github.io/nib/">Nib</a></li>
 <li><a href="http://github.com/TrevorBurnham/connect-assets">connect-assets</a></li>
 <li><a href="http://visionmedia.github.com/mocha/">Mocha</a></li>
 <li><a href="https://github.com/visionmedia/should.js/">Should.Js</a></li>
@@ -144,8 +160,9 @@ folder.  Enjoy your express-coffee </p>
 
 <p>pull requests are welcome</p>
       </section>
-    </div>
 
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
