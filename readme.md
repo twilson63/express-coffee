@@ -1,4 +1,4 @@
-# Express Coffee Template 8 (1.8)
+# Express Coffee Template 8 (1.8.1)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -31,7 +31,6 @@ This is a template that can be used to create nodejs applications using
 * [Mocha](http://visionmedia.github.com/mocha/)
 * [Should.Js](https://github.com/visionmedia/should.js/)
 * [Mongoose](https://github.com/LearnBoost/mongoose)
-* [Foundation](http://foundation.zurb.com/)
 
 These will install with npm, just do 
 
