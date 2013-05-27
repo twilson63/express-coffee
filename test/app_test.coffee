@@ -12,7 +12,7 @@ describe 'General', ->
                 done
         )
 
-  describe "Bad Routing", ->
+  describe "404 Routing", ->
     it "should not be here", (done) ->
       request(app)
         .get('/nonexistent/action')

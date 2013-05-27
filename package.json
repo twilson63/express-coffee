@@ -1,37 +1,69 @@
 {
-    "name": "express-coffee"
-  , "version": "0.1.8"
-  , "private": true
-  , "dependencies": {
-      "express": "3.x" 
-    , "coffee-script": "1.6.x"
-    , "jade": "0.30.x"
-    , "connect-assets": "2.4.0"
-    , "stylus": "0.32.x"
-    , "nib": "0.9.x"
-    , "markdown": "0.4.0"
-    , "passport": "0.1.16"
-    , "which": "1.0.5"
-    , "mongoose": "3.6.x"
-    , "wrench": "1.4.4"
-  }, "scripts": {
-    "install": "node node_modules/coffee-script/bin/cake build",
-    "start": "node server.js",
-    "test": "mocha --require should --compilers coffee:coffee-script --colors"
-  }, "devDependencies": {
-      "coffee-script": "*"
-    , "mocha": "*"
-    , "should": "*"
-    , "supertest": "*"
-    , "request": "*"
-    , "supervisor": "*"
-    , "docco-husky": "*"
-    , "puts": "*"
-    , "node-inspector": "*"
-    , "ejs": "*"
-  }, 
-  "engines": {
-    "node": "~0.10.x",
-    "npm": "1.2.x"
-  }
+	"name": "express-coffee", 
+	"version": "1.8.1",
+	"private": true,
+	"author": "Tom Wilson <tom@jackhq.com> (http://github.com/twilson63)",
+	"repository": {
+	  "type": "git",
+	  "url": "https://github.com/twilson63/express-coffee"
+	},
+  "scripts": {
+	    "install": "node node_modules/coffee-script/bin/cake build",
+	    "start": "node server.js",
+	    "test": "mocha --require should --compilers coffee:coffee-script --colors"
+	}, 
+	"dependencies": {
+		"express": "3.x",
+		"coffee-script": "1.6.x",
+		"jade": "0.30.x",
+		"connect-assets": "2.4.x",
+		"stylus": "0.32.x",
+		"nib": "0.9.x",
+		"markdown": "0.4.0",
+		"which": "1.0.5",
+		"mongoose": "3.6.x",
+		"wrench": "1.5.1"
+	}, 
+	"devDependencies": {
+		"coffee-script": "*",
+    "mocha": "*",
+    "should": "*",
+    "supertest": "*",
+    "request": "*",
+    "supervisor": "*",
+    "docco-husky": "*",
+    "puts": "*",
+    "node-inspector": "*",
+    "ejs": "*"
+	}, 
+	"engines": {
+		"node": "~0.10.x",
+		"npm": "1.2.x"
+	},
+	"licenses": [
+	  {
+	    "type": "MIT",
+	    "url": "http://www.opensource.org/licenses/mit-license.php" 
+	  }
+	],
+	"contributors": [
+	  "Jorrit Posthuma <> (https://github.com/JorritPosthuma)",
+	  "Jacob Gable <jacob.gable@gmail.com> (http://jacob4u2.posterous.com)",
+	  "Michael de Silva <michael@mwdesilva.com> (http://www.mwdesilva.com)",
+	  "Jimmy Chao <daizenga@gmail.com> (http://neethack.com)",
+	  "Sergey Klimov <sergey.v.klimov@gmail.com> (https://twitter.com/#!/sergey_v_klimov)",
+	  "Adrien Brault <> (https://github.com/adrienbrault)",
+	  "Sandro Padin <> (https://github.com/spadin)",
+	  "Cody Russell <> (https://github.com/bratsche)",
+	  "Wes Cruver <> (https://github.com/chieffancypants)",
+	  "Arthur Gautier <> (https://github.com/baloo)",
+	  "Jaime Pillora <> (https://github.com/jpillora)",
+	  "Steven Shingler <> (https://github.com/sshingler)",
+	  "Johnny Gannon <> (https://github.com/jgannonjr)",
+	  "Zachery Hostens <> (https://github.com/zacheryph)",
+	  "Fernando <> (https://github.com/fern4lvarez)",
+	  "John Katsnelson <> (https://github.com/jkatsnelson)",
+	  "Craig Ulliott <> (https://github.com/craigulliott)",
+	  "Shaun Kirk Wong <shaun.kirk.wong@gmail.com> (https://github.com/skw)"
+	]
 }
