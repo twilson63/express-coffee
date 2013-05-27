@@ -1,6 +1,6 @@
 {
 	"name": "express-coffee", 
-	"version": "0.1.8.1",
+	"version": "1.8.1",
 	"private": true,
 	"author": "Tom Wilson <tom@jackhq.com> (http://github.com/twilson63)",
 	"repository": {

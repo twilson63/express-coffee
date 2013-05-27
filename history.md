@@ -4,8 +4,10 @@
 	- added contributors list
 	- added author
 	- added license
-	- reformatted json 
+	- reformatted json
+	- updated version number 
 - foundation removed from requirements in readme
+- updated readme technologies to match package.json
 
 # 1.8
 
