@@ -6,7 +6,7 @@
 	- added license
 	- reformatted json
 	- updated version number 
-- foundation removed from requirements in readme
+- foundation, should.js and passport removed from requirements in readme
 - updated readme technologies to match package.json
 
 # 1.8
