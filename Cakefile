@@ -35,7 +35,7 @@ test = (callback) ->
     '--reporter'
     'spec'
     '--compilers'
-    'coffee:coffee-script'
+    'coffee:coffee-script/register'
     '--colors'
     '--require'
     'should'
