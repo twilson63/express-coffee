@@ -2,24 +2,25 @@ express = require 'express'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
+session = require('express-session')
+cookieParser = require('cookie-parser')
+bodyParser = require("body-parser")
 
 #### Basic application initialization
 # Create app instance.
 app = express()
 
-
-# Define Port
+# Define Port & Environment
 app.port = process.env.PORT or process.env.VMC_APP_PORT or 3000
-
+env = process.env.NODE_ENV or "development"
 
 # Config module exports has `setEnvironment` function that sets app settings depending on environment.
 config = require "./config"
-app.configure 'production', 'development', 'testing', ->
-  config.setEnvironment app.settings.env
+config.setEnvironment env
 
 # db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
 # mongoose.connect db_config
-if app.settings.env != 'production'
+if env != 'production'
   mongoose.connect 'mongodb://localhost/example'
 else
   console.log('If you are running in production, you may want to modify the mongoose connect path')
@@ -29,20 +30,22 @@ else
 app.use assets()
 # Set the public folder as static assets.
 app.use express.static(process.cwd() + '/public')
+
 # Express Session
-store = new express.session.MemoryStore
-app.use express.cookieParser()
-app.use express.session(
-  secret: 'shhh'
-  store: store
-) 
+console.log "setting session/cookie"
+app.use cookieParser()
+app.use session(
+  secret: "keyboard cat"
+  key: "sid"
+  cookie:
+    secure: true
+)
 
 # Set View Engine.
 app.set 'view engine', 'jade'
 
 # [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
-app.use express.urlencoded()
-app.use express.json()
+app.use bodyParser()
 
 
 #### Finalization
