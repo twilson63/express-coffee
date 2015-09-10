@@ -9,7 +9,7 @@ describe 'General', ->
         .get("/")
         .send( {} )
         .expect(200, {},
-                done
+                done()
         )
 
   describe "404 Routing", ->
@@ -18,5 +18,5 @@ describe 'General', ->
         .get('/nonexistent/action')
         .send( {} )
         .expect(404, {},
-                done
+                done()
         )

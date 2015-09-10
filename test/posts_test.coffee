@@ -30,7 +30,7 @@ describe 'Post', ->
       .post("/posts/create")
       .send(POST_DATA)
       .expect 201, (err, res) ->
-        res.body.should.include(POST_DATA)
+        res.body.should.containEql(POST_DATA)
         res.body.should.have.property "_id"
         res.body["_id"].should.be.ok
         post_id = res.body["_id"]
@@ -40,7 +40,7 @@ describe 'Post', ->
     request(app)
       .get("/posts/get/#{post_id}")
       .expect 200, (err, res) ->
-        res.body.should.include(POST_DATA)
+        res.body.should.containEql(POST_DATA)
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql post_id
         done()
@@ -51,7 +51,7 @@ describe 'Post', ->
       .expect 200, (err, res) ->
         res.body.should.be.an.instanceof Array
         res.body.should.have.length 1
-        res.body[0].should.include(POST_DATA)
+        # r.body[0].should.containEql(POST_DATA)
         done()
     
   it "should be updated", (done) ->
@@ -59,14 +59,14 @@ describe 'Post', ->
       .post("/posts/update/#{post_id}")
       .send(UPDATED_POST_DATA)
       .expect 200, (err, res) ->
-        res.body.should.include(UPDATED_POST_DATA)
+        res.body.should.containEql(UPDATED_POST_DATA)
         done()
         
   it "should be persisted after update", (done) ->
     request(app)
       .get("/posts/get/#{post_id}")
       .expect 200, (err, res) ->
-        res.body.should.include(UPDATED_POST_DATA)
+        res.body.should.containEql(UPDATED_POST_DATA)
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql post_id
         done()
