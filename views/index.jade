@@ -27,10 +27,10 @@ block content
 
         ### Automated Compile Step
 
-        express-coffee template is made to quickly start putting together an application/prototype.  
+        express-coffee template is made to quickly start putting together an application/prototype.
 
         Now you can run cake dev and when every coffee file is changed it will rebuild the app.
-        
+
         Also, it includes supervisor, which will restart you application everytime you change your views or js files.
 
             cake dev
@@ -40,9 +40,9 @@ block content
 
         express-coffee template comes ready to go with connect-assets a rails like asset pipeline.  You can add your css and js to the assets folder.  Then in jade you can reference your assets using a couple of helper methods.
 
-             != css('mycss') 
+             != css('mycss')
              #= Pull from /assets/css/mycss.styl
-             != js('app') 
+             != js('app')
              #= Pull from /assets/js/app.coffee or app.js
 
         See [connect-assets](http://github.com/TrevorBurnham/connect-assets) for more information
@@ -63,9 +63,9 @@ block content
         skeleton is clean and basic and can easily be adjusted.
 
         ### Mocha and Request for testing
-        
+
         mocha is an extremely powerful and easy to use testing framework
-        
+
         see [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/)
 
             describe 'Sample test', ->
@@ -77,7 +77,7 @@ block content
             cake test
 
         ### Setup to deploy to heroku
-        
+
             rm -rf .git
             git init
             echo 'node_modules' >> '.gitignore'

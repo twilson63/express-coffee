@@ -18,9 +18,9 @@ cleanDB = (done) ->
 
 describe 'User', ->
   before cleanDB
-  
+
   user_id = null
-      
+
   it "should be created", (done) ->
     request(app)
       .post("/users/create")
@@ -31,7 +31,7 @@ describe 'User', ->
         res.body["_id"].should.be.ok
         user_id = res.body["_id"]
         done()
-        
+
   it "should be accessible by id", (done) ->
     request(app)
       .get("/users/get/#{user_id}")
@@ -40,7 +40,7 @@ describe 'User', ->
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql user_id
         done()
-        
+
   it "should be listed in list", (done) ->
     request(app)
       .get("/users")
@@ -49,7 +49,7 @@ describe 'User', ->
         res.body.should.have.length 1
         # r.body[0].should.containEql(INITIAL_DATA)
         done()
-    
+
   it "should be updated", (done) ->
     request(app)
       .post("/users/update/#{user_id}")
@@ -57,7 +57,7 @@ describe 'User', ->
       .expect 200, (err, res) ->
         res.body.should.containEql(UPDATED_DATA)
         done()
-        
+
   it "should be persisted after update", (done) ->
     request(app)
       .get("/users/get/#{user_id}")
@@ -66,13 +66,13 @@ describe 'User', ->
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql user_id
         done()
-  
+
   it "should be removed", (done) ->
     request(app)
       .del("/users/delete/#{user_id}")
       .expect 200, (err, res) ->
         done()
-    
+
   it "should not be listed after remove", (done) ->
     request(app)
       .get("/users")
@@ -80,6 +80,5 @@ describe 'User', ->
         res.body.should.be.an.instanceof Array
         res.body.should.have.length 0
         done()
-        
+
   after cleanDB
-      
