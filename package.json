@@ -21,7 +21,7 @@
     "nib": "1.1.x",
     "markdown": "0.4.0",
     "which": "1.0.5",
-    "mongoose": "4.2.x",
+    "mongoose": "3.8.x",
     "kerberos": "~0.0",
     "express-session": "1.5.x",
     "cookie-parser": "1.4.x",

@@ -16,7 +16,7 @@ This is a template that can be used to create nodejs applications using
 * bootstrap-stylus 2.3.1 (not a npm module)
 * Nib v1.1.x
 * Connect Assets v2.5.x
-* MongoDB / Mongoose 4.2.x
+* MongoDB / Mongoose 3.8.x
 
 ## Requirements
 
