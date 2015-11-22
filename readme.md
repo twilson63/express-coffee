@@ -1,4 +1,4 @@
-# Express Coffee Template 8 (1.8.1)
+# Express Coffee Template 9 (1.9.0)
 
 This is a Node Express CoffeeScript Stack Template
 
@@ -6,17 +6,17 @@ It comes ready to go with connect-assets that give you the option
 to use coffee-script and stylus for the client side.
 
 ## Technologies
-This is a template that can be used to create nodejs applications using 
+This is a template that can be used to create nodejs applications using
 
-* Node v0.10.x
-* Express v3.2.x
-* CoffeeScript v1.6.x
-* Jade v0.30.0
-* Stylus v0.32.x 
+* Node v4.2.x
+* Express v4.13.x
+* CoffeeScript v1.10.x
+* Jade v1.11.0
+* Stylus v0.52.x
 * bootstrap-stylus 2.3.1 (not a npm module)
-* Nib v0.9.x
-* Connect Assets v2.4.x
-* MongoDB / Mongoose 3.6.x
+* Nib v1.1.x
+* Connect Assets v2.5.x
+* MongoDB / Mongoose 4.2.x
 
 ## Requirements
 
