@@ -1,13 +1,13 @@
 <%=: name | capitalize %> = require '../models/<%=: name %>'
 
 # <%=: name | capitalize %> model's CRUD controller.
-module.exports = 
+module.exports =
 
   # Lists all <%=: name %>s
   index: (req, res) ->
     <%=: name | capitalize %>.find {}, (err, <%=: name %>s) ->
       res.send <%=: name %>s
-      
+
   # Creates new <%=: name %> with data from `req.body`
   create: (req, res) ->
     <%=: name %> = new <%=: name | capitalize %> req.body
@@ -18,7 +18,7 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
-        
+
   # Gets <%=: name %> by id
   get: (req, res) ->
     <%=: name | capitalize %>.findById req.params.id, (err, <%=: name %>) ->
@@ -27,7 +27,7 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
-             
+
   # Updates <%=: name %> with data from `req.body`
   update: (req, res) ->
     <%=: name | capitalize %>.findByIdAndUpdate req.params.id, {"$set":req.body}, (err, <%=: name %>) ->
@@ -36,7 +36,7 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
-    
+
   # Deletes <%=: name %> by id
   delete: (req, res) ->
     <%=: name | capitalize %>.findByIdAndRemove req.params.id, (err) ->
@@ -45,5 +45,3 @@ module.exports =
       else
         res.send err
         res.statusCode = 500
-      
-  

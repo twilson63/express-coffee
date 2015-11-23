@@ -25,7 +25,7 @@ if env != 'production'
 else
   console.log('If you are running in production, you may want to modify the mongoose connect path')
 
-#### View initialization 
+#### View initialization
 # Add Connect Assets.
 app.use assets()
 # Set the public folder as static assets.
@@ -56,4 +56,3 @@ routes(app)
 
 # Export application object
 module.exports = app
-

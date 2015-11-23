@@ -22,9 +22,9 @@ cleanDB = (done) ->
 
 describe 'Post', ->
   before cleanDB
-  
+
   post_id = null
-      
+
   it "should be created", (done) ->
     request(app)
       .post("/posts/create")
@@ -35,7 +35,7 @@ describe 'Post', ->
         res.body["_id"].should.be.ok
         post_id = res.body["_id"]
         done()
-        
+
   it "should be accessible by id", (done) ->
     request(app)
       .get("/posts/get/#{post_id}")
@@ -44,7 +44,7 @@ describe 'Post', ->
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql post_id
         done()
-        
+
   it "should be listed in list", (done) ->
     request(app)
       .get("/posts")
@@ -53,7 +53,7 @@ describe 'Post', ->
         res.body.should.have.length 1
         # r.body[0].should.containEql(POST_DATA)
         done()
-    
+
   it "should be updated", (done) ->
     request(app)
       .post("/posts/update/#{post_id}")
@@ -61,7 +61,7 @@ describe 'Post', ->
       .expect 200, (err, res) ->
         res.body.should.containEql(UPDATED_POST_DATA)
         done()
-        
+
   it "should be persisted after update", (done) ->
     request(app)
       .get("/posts/get/#{post_id}")
@@ -70,13 +70,13 @@ describe 'Post', ->
         res.body.should.have.property "_id"
         res.body["_id"].should.be.eql post_id
         done()
-  
+
   it "should be removed", (done) ->
     request(app)
       .del("/posts/delete/#{post_id}")
       .expect 200, (err, res) ->
         done()
-    
+
   it "should not be listed after remove", (done) ->
     request(app)
       .get("/posts")
@@ -84,6 +84,5 @@ describe 'Post', ->
         res.body.should.be.an.instanceof Array
         res.body.should.have.length 0
         done()
-        
+
   after cleanDB
-      

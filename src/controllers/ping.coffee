@@ -3,11 +3,11 @@
 exports.index = (req, res) ->
   data = {"hello":["world"]}
   res.send data
-  
+
 # Sends anything from request back as JSON
 exports.pong = (req, res) ->
   # Create ping-pong response from received data
-  data = 
+  data =
     pongQuery: req.query
     pongBody: req.body
     pongParams: req.params
