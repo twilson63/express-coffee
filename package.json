@@ -1,6 +1,6 @@
 {
   "name": "express-coffee",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "private": true,
   "author": "Tom Wilson <tom@jackhq.com> (http://github.com/twilson63)",
   "repository": {
@@ -13,18 +13,19 @@
     "test": "mocha --require should --compilers coffee:coffee-script/register --colors"
   },
   "dependencies": {
-    "express": "4.x",
-    "coffee-script": "1.7.x",
-    "jade": "1.3.x",
+    "coffee-script": "1.10.x",
+    "express": "4.13.x",
+    "jade": "1.11.x",
     "connect-assets": "2.5.x",
-    "stylus": "0.43.x",
-    "nib": "0.9.x",
+    "stylus": "0.52.x",
+    "nib": "1.1.x",
     "markdown": "0.4.0",
     "which": "1.0.5",
     "mongoose": "3.8.x",
-    "express-session": "1.0.x",
-    "cookie-parser": "1.0.x",
-    "body-parser": "1.0.x",
+    "kerberos": "~0.0",
+    "express-session": "1.5.x",
+    "cookie-parser": "1.4.x",
+    "body-parser": "1.3.x",
     "wrench": "1.5.x"
   },
   "devDependencies": {
@@ -40,8 +41,8 @@
     "ejs": "*"
   },
   "engines": {
-    "node": "~0.10.x",
-    "npm": "1.2.x"
+    "node": "4.2.x",
+    "npm": "3.4.x"
   },
   "licenses": [
     {
