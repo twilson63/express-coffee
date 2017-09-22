@@ -28,7 +28,7 @@ This is a template that can be used to create nodejs applications using
 * [bootstrap-stylus](https://github.com/Acquisio/bootstrap-stylus)
 * [Nib](http://visionmedia.github.io/nib/)
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
-* [Mocha](http://visionmedia.github.com/mocha/)
+* [Mocha](http://mochajs.org/)
 * [Mongoose](https://github.com/LearnBoost/mongoose)
 
 These will install with npm, just do 
@@ -69,7 +69,7 @@ cake dev
 
 mocha is an extremely powerful and easy to use testing framework
 
-see [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/)
+see [http://mochajs.org/](http://mochajs.org/)
 
     describe 'Sample test', ->
       it 'should be true', ->
